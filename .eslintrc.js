@@ -6,19 +6,14 @@ module.exports = {
 	extends: [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
-		"plugin:react/recommended"
+		"plugin:react/recommended",
+		"plugin:i18next/recommended"
 	],
 	overrides: [
 		{
-			"env": {
-				"node": true
-			},
-			"files": [
-				".eslintrc.{js,cjs}"
-			],
-			"parserOptions": {
-				"sourceType": "script"
-			}
+			"env": { "node": true },
+			"files": [ ".eslintrc.{js,cjs}" ],
+			"parserOptions": { "sourceType": "script" }
 		}
 	],
 	parser: "@typescript-eslint/parser",
@@ -28,7 +23,8 @@ module.exports = {
 	},
 	plugins: [
 		"@typescript-eslint",
-		"react"
+		"react",
+		"i18next"
 	],
 	rules: {
 		"object-curly-spacing": ["warn", "always"],
@@ -40,7 +36,8 @@ module.exports = {
 		"react/react-in-jsx-scope": "off",
 		"import/extension": "off",
 		"@typescript-eslint/ban-ts-comment": "warn",
-		"no-underscore-dangle": "off"
+		"no-underscore-dangle": "off",
+		"i18next/no-literal-string": ["error", { markupOnly: true }]
 	},
 	globals: {
 		"__IS_DEV__": true

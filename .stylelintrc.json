@@ -1,0 +1,7 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "comment-whitespace-inside": "never",
+    "selector-class-pattern": null
+  }
+}
