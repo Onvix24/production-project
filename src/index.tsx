@@ -5,14 +5,17 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "app/providers/ThemeProvider";
 
 import "shared/config/i18n/i18n";
+import { ErrorBoundary } from "app/providers/ErrorBoundary";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
 		<BrowserRouter>
-			<ThemeProvider>
-				<App/>
-			</ThemeProvider>
+			<ErrorBoundary>
+				<ThemeProvider>
+					<App/>
+				</ThemeProvider>
+			</ErrorBoundary>
 		</BrowserRouter>
 	</React.StrictMode>
 );

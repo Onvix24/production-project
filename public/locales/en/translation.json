@@ -3,5 +3,8 @@
   "Переклад": "Translate",
   "Головна сторінка": "Main Page",
   "Про сайт": "About us",
-  "Мова": "English"
+  "Мова": "English",
+  "Сторінка не найдена": "Page not found",
+  "Відбулась помилка": "An error occurred",
+  "throw error": "throw error"
 }
