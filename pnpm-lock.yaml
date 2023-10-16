@@ -97,9 +97,15 @@ devDependencies:
   stylelint:
     specifier: ^15.10.3
     version: 15.10.3(typescript@5.2.2)
+  stylelint-config-recommended-scss:
+    specifier: ^13.0.0
+    version: 13.0.0(postcss@8.4.31)(stylelint@15.10.3)
   stylelint-config-standard-scss:
     specifier: ^11.0.0
     version: 11.0.0(postcss@8.4.31)(stylelint@15.10.3)
+  stylelint-order:
+    specifier: ^6.0.3
+    version: 6.0.3(stylelint@15.10.3)
   ts-loader:
     specifier: ^9.4.4
     version: 9.5.0(typescript@5.2.2)(webpack@5.89.0)
@@ -5114,6 +5120,14 @@ packages:
       util-deprecate: 1.0.2
     dev: true
 
+  /postcss-sorting@8.0.2(postcss@8.4.31):
+    resolution: {integrity: sha512-M9dkSrmU00t/jK7rF6BZSZauA5MAaBW4i5EnJXspMwt4iqTh/L9j6fgMnbElEOfyRyfLfVbIHj/R52zHzAPe1Q==}
+    peerDependencies:
+      postcss: ^8.4.20
+    dependencies:
+      postcss: 8.4.31
+    dev: true
+
   /postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
     dev: true
@@ -5952,6 +5966,16 @@ packages:
     dependencies:
       stylelint: 15.10.3(typescript@5.2.2)
       stylelint-config-recommended: 13.0.0(stylelint@15.10.3)
+    dev: true
+
+  /stylelint-order@6.0.3(stylelint@15.10.3):
+    resolution: {integrity: sha512-1j1lOb4EU/6w49qZeT2SQVJXm0Ht+Qnq9GMfUa3pMwoyojIWfuA+JUDmoR97Bht1RLn4ei0xtLGy87M7d29B1w==}
+    peerDependencies:
+      stylelint: ^14.0.0 || ^15.0.0
+    dependencies:
+      postcss: 8.4.31
+      postcss-sorting: 8.0.2(postcss@8.4.31)
+      stylelint: 15.10.3(typescript@5.2.2)
     dev: true
 
   /stylelint-scss@5.2.1(stylelint@15.10.3):
