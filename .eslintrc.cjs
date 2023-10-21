@@ -38,7 +38,13 @@ module.exports = {
 		"import/extension": "off",
 		"@typescript-eslint/ban-ts-comment": "warn",
 		"no-underscore-dangle": "off",
-		"i18next/no-literal-string": ["error", { markupOnly: true }],
+		"i18next/no-literal-string": [
+			"error",
+			{
+				markupOnly: true,
+				ignoreAttribute: ["data-testid", "to"]
+			}
+		],
 		"max-len": ["error", { ignoreComments: true, code: 100 }]
 	},
 	globals: {
