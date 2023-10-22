@@ -1,15 +1,15 @@
-import React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import AboutPage from './AboutPage';
+import React from "react";
+import { Meta, StoryFn } from "@storybook/react";
+import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "app/providers/ThemeProvider";
+import AboutPage from "./AboutPage";
 
 export default {
-    title: 'pages/AboutPage',
-    component: AboutPage,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+	title: "pages/AboutPage",
+	component: AboutPage,
+	argTypes: {
+		backgroundColor: { control: "color" },
+	},
 } as Meta<typeof AboutPage>;
 
 // @ts-ignore
