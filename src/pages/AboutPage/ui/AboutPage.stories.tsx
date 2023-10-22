@@ -1,0 +1,23 @@
+import React from 'react';
+import { Meta, StoryFn } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
+import AboutPage from './AboutPage';
+
+export default {
+    title: 'pages/AboutPage',
+    component: AboutPage,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as Meta<typeof AboutPage>;
+
+// @ts-ignore
+const Template: StoryFn<typeof AboutPage> = (args) => <AboutPage {...args} />;
+
+export const Normal = Template.bind({});
+Normal.args = {};
+
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

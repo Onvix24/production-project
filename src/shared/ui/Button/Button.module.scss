@@ -11,3 +11,12 @@
 	outline: none;
 	background: none;
 }
+
+.outline {
+	margin: 0;
+	padding: 3px;
+
+	border: 2px solid var(--primary-color);
+	border-radius: 10px;
+	background: none;
+}
