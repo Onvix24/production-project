@@ -1,0 +1,33 @@
+name: linting, testing, building
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+        run: pnpm install
+      - name: building production project
+        run: pnpm build:prod
+      - name: linting typescript
+        run: pnpm lint:ts
+      - name: linting scss
+        run: pnpm lint:scss
+      - name: unit testing
+        run: pnpm test:unit
+      - name: build storybook
+        run: pnpm storybook:build
+      - name: screenshot testing
+        run: pnpm test:ui
