@@ -38,6 +38,7 @@ module.exports = {
 		"react/react-in-jsx-scope": "off",
 		"import/extension": "off",
 		"@typescript-eslint/ban-ts-comment": "warn",
+		"@typescript-eslint/no-unused-vars": "warn",
 		"no-underscore-dangle": "off",
 		"i18next/no-literal-string": [
 			"error",
