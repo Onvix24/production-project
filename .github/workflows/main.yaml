@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm install -s
+        run: npm install --silent
       - name: building production project
         run: npm run build:prod
       - name: linting typescript
