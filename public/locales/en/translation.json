@@ -1,11 +1,12 @@
 {
   "Вітання": "Welcome to my project",
   "Переклад": "Translate",
-  "Головна сторінка": "Main Page",
+  "Головна": "Main Page",
   "Про сайт": "About us",
   "Мова": "English",
   "Сторінка не найдена": "Page not found",
   "Відбулась помилка": "An error occurred",
   "throw error": "throw error",
-  "Переключити": "Switch"
+  "Переключити": "Switch",
+  "Коротка назва мови": "EN"
 }
