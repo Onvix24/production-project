@@ -17,11 +17,9 @@ const ThemeProvider: FC<ThemeProviderProps > = ({ children }) => {
 	}), [theme]);
 
 	return (
-		<div>
-			<ThemeContext.Provider value={defaultProps}>
-				{children}
-			</ThemeContext.Provider>
-		</div>
+		<ThemeContext.Provider value={defaultProps}>
+			{children}
+		</ThemeContext.Provider>
 	);
 };
 

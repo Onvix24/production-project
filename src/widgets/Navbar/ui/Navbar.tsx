@@ -1,7 +1,10 @@
-import React from "react";
-import { classNames } from "shared/lib/classNames/classNames";
-import cls from "./Navbar.module.scss";
+/* eslint-disable i18next/no-literal-string */
+import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { classNames } from "shared/lib/classNames/classNames";
+import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { Modal } from "shared/ui/Modal/Modal";
+import cls from "./Navbar.module.scss";
 
 interface NavbarProps {
     className?: string;
@@ -10,12 +13,29 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
 
 	const { t } = useTranslation();
+	const [isAuthModal, setIsAuthModal] = useState(false);
 
+	const onToggleModal = useCallback(
+		() => {
+			setIsAuthModal((prevValue) => !prevValue);			
+		}, []);
+	
 	return (
 		<div className={classNames(cls.navbar)}>
-			<div className={cls.links}>
-				/
-			</div>
+			<Button 
+				theme={ButtonTheme.CLEAR_INVERTED}
+				className={cls.links}
+				onClick={onToggleModal}
+			>
+				{t("Ввійти")}
+			</Button>
+			<Modal isOpen={isAuthModal} onClose={onToggleModal}>
+				<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur fuga
+						rem sit! Accusantium architecto at autem culpa eaque eveniet,
+						exercitationem, impedit laboriosam libero, quod reiciendis rem repellat
+						similique tempora veniam.
+				</div>
+			</Modal>
 		</div>
 	);
 };
