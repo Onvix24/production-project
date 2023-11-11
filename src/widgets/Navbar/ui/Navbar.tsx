@@ -5,6 +5,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { Modal } from "shared/ui/Modal/Modal";
 import cls from "./Navbar.module.scss";
+import { LoginModal } from "features/AuthByUserName";
 
 interface NavbarProps {
     className?: string;
@@ -29,13 +30,7 @@ export const Navbar = ({ className }: NavbarProps) => {
 			>
 				{t("Ввійти")}
 			</Button>
-			<Modal isOpen={isAuthModal} onClose={onToggleModal}>
-				<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur fuga
-						rem sit! Accusantium architecto at autem culpa eaque eveniet,
-						exercitationem, impedit laboriosam libero, quod reiciendis rem repellat
-						similique tempora veniam.
-				</div>
-			</Modal>
+			<LoginModal isOpen={isAuthModal} onClose={onToggleModal}/>
 		</div>
 	);
 };

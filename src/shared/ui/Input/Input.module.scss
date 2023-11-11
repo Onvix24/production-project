@@ -1,0 +1,36 @@
+.Input {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-family: Nunito Sans;
+
+    ::placeholder {
+        color: #adbcc0;
+    }
+
+    :focus {
+        outline: none;
+    }
+    &__title {
+        color: #141c1f;
+    }
+
+    &__wrapper {
+        width: 100%;
+    }
+
+    &__field {
+        width: 100%;
+
+        padding: 8px 16px;
+
+        color: #555555;
+
+        border: 1px solid #74a2b2;
+        border-radius: 15px;
+
+        font-weight: 500;
+    }
+}

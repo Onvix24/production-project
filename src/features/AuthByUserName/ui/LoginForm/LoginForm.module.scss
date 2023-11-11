@@ -1,0 +1,19 @@
+.LoginForm {
+    display: flex;
+    flex-direction: column;
+    
+    :not(:last-child) {
+        margin-bottom: 8px;
+    }
+
+    &__input {
+    }
+
+    &__button {
+        margin-left: auto;
+
+        border-color: #74A2B2;
+        border-radius: 48px;
+    }
+}
+
