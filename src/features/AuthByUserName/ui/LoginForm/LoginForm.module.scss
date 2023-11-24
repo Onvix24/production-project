@@ -1,7 +1,7 @@
 .LoginForm {
     display: flex;
     flex-direction: column;
-    
+
     :not(:last-child) {
         margin-bottom: 8px;
     }
@@ -12,8 +12,18 @@
     &__button {
         margin-left: auto;
 
-        border-color: #74A2B2;
+        border-color: #74a2b2;
         border-radius: 48px;
     }
-}
 
+    &__title {
+        // color: var(--primary-color);
+
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    &__error {
+        color: red;
+    }
+}
