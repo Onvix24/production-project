@@ -35,7 +35,7 @@ export const LoginForm = ({ className }: LoginFormProps) => {
 	}, [dispath]);
 
 	const onLoginClick = useCallback(() => {
-		//@ts-ignore
+		// @ts-ignore
 		dispath(loginByUsername({ username, password }));
 	}, [dispath, password, username]);
 	
