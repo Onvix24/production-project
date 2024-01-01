@@ -4,20 +4,27 @@ import { counterReducer } from "entities/Counter";
 // import { counterReducer } from "../../../../entities/Counter";
 import { userReducer } from "entities/User";
 import { loginReducer } from "features/AuthByUsername";
+import { createReducerManager } from "./reducerManager";
 
 export function createReduxStore(initialState?: StateSchema) {
 
 	const rootRedusers: ReducersMapObject<StateSchema> = {
 		counter: counterReducer,
 		user: userReducer,
-		loginForm: loginReducer,
 	};
 
-	return configureStore<StateSchema>({
-		reducer: rootRedusers,
+	const reducerManager = createReducerManager(rootRedusers);
+
+	const store = configureStore<StateSchema>({
+		reducer: reducerManager.reduce,
 		devTools: __IS_DEV__,
 		preloadedState: initialState,
 	});
+
+	// @ts-ignore
+	store.reducerManager = reducerManager;
+
+	return store;
 }
 
 // export type AppDispatch = ReturnType<typeof createReduxStore>["dispatch"];
