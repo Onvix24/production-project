@@ -41,28 +41,6 @@
 	margin-left: 30px;
 }
 
-.item {
-	display: flex;
-	gap: 21px;
-
-	align-items: center;
-}
-
-.icon {
-	//margin-right: 21px;
-	fill: var(--inverted-primary-color)
-}
-
-.link {
-	transition: opacity 0.3s;
-
-	opacity: 1;
-
-	font-family: Nunito Sans;
-	font-size: 16px;
-}
-
-
 .collapsed {
 	width: var(--sidebar-width-collapsed);
 
@@ -73,11 +51,5 @@
 
 	.lang {
 		margin-left: 0;
-	}
-
-	.link {
-		width: 0;
-
-		opacity: 0;
 	}
 }

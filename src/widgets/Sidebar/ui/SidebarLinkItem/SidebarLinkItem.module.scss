@@ -1,0 +1,30 @@
+.item {
+	display: flex;
+	gap: 21px;
+
+	align-items: center;
+}
+
+.icon {
+	//margin-right: 21px;
+	fill: var(--inverted-primary-color)
+}
+
+.link {
+	transition: opacity 0.3s;
+
+	opacity: 1;
+
+	font-family: Nunito Sans;
+	font-size: 16px;
+}
+
+.collapsed {
+	.link {
+		width: 0;
+
+        transition: 0.3s opacity;
+
+		opacity: 0;
+	}
+}

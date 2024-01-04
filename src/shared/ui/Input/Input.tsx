@@ -15,7 +15,7 @@ interface InputProps extends HTMLInputProps {
 
 
 
-export const Input = (props : InputProps) => {
+export const Input = memo((props : InputProps) => {
     
 	const {
 		onChange,
@@ -53,4 +53,4 @@ export const Input = (props : InputProps) => {
 			</div>
 		</div>
 	);
-};
+});
