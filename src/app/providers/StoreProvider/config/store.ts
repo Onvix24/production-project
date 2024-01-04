@@ -3,14 +3,17 @@ import { StateSchema } from "./StateSchema";
 import { counterReducer } from "entities/Counter";
 // import { counterReducer } from "../../../../entities/Counter";
 import { userReducer } from "entities/User";
-import { loginReducer } from "features/AuthByUsername";
+// import { userReducer } from "../../../../entities/User";
 import { createReducerManager } from "./reducerManager";
 
-export function createReduxStore(initialState?: StateSchema) {
-
+export function createReduxStore(
+	initialState?: StateSchema,
+	asyncReducers?: ReducersMapObject<StateSchema>
+) {
 	const rootRedusers: ReducersMapObject<StateSchema> = {
+		...asyncReducers,
 		counter: counterReducer,
-		user: userReducer,
+		user: userReducer
 	};
 
 	const reducerManager = createReducerManager(rootRedusers);

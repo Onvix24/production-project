@@ -18,7 +18,7 @@ interface DymamicModuleLoaderProps {
 
 export const DymamicModuleLoader: FC<DymamicModuleLoaderProps> = (props) => {
 	const { children, reducers, removeAfterUnmount } = props;
-	const store = useStore() as ReduxStoreWithManager;
+	const store = useStore() as ReduxStoreWithManager;	
 	const dispath = useDispatch();
 
 	useEffect(() => {
@@ -28,10 +28,12 @@ export const DymamicModuleLoader: FC<DymamicModuleLoaderProps> = (props) => {
 		});
 
 		return () => {
-			Object.entries(reducers).forEach(([name]: ReducersListEntry) => {
-				store.reducerManager.remove(name);
-				dispath({ type: `@DESTROY ${name} reducer` });
-			});
+			if (removeAfterUnmount) {
+				Object.entries(reducers).forEach(([name]: ReducersListEntry) => {
+					store.reducerManager.remove(name);
+					dispath({ type: `@DESTROY ${name} reducer` });
+				});
+			}
 		};
 		//eslint-disable-next-line
 	}, []);

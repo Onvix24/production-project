@@ -4,7 +4,7 @@ import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import cls from "./LoginForm.module.scss";
 import { Input } from "shared/ui/Input/Input";
 import { useDispatch, useSelector } from "react-redux";
-import { memo, useCallback } from "react";
+import { memo, useCallback } from "react";	
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
 import {
@@ -15,7 +15,7 @@ import {
 } from "features/AuthByUsername/model/selectors/getLoginFormPassword/getLoginFormPassword";
 import {
 	getLoginFormIsLoading
-} from "features/AuthByUsername/model/selectors/getLoginFormIsLoading/getLoginIsLoading";
+} from "features/AuthByUsername/model/selectors/getLoginFormIsLoading/getLoginFormIsLoading";
 import {
 	getLoginFormError
 } from "features/AuthByUsername/model/selectors/getLoginFormError/getLoginFormError";
@@ -42,8 +42,8 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
 	const isLoading = useSelector(getLoginFormIsLoading);
 	const error = useSelector(getLoginFormError);
 
-	const onChangeUserName = useCallback((value: string) => {
-		dispath(loginActions.setUserName(value));
+	const onChangeUsername = useCallback((value: string) => {
+		dispath(loginActions.setUsername(value));
 	}, [dispath]);
 
 	const onChangePassword = useCallback((value: string) => {
@@ -71,7 +71,7 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
 					placeholder="Ім'я"
 					type="text"
 					value={username}
-					onChange={onChangeUserName}
+					onChange={onChangeUsername}
 				/>
 				<Input
 					className={cls.LoginForm__input}
