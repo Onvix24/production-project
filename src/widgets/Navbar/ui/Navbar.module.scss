@@ -4,15 +4,19 @@
 
 	width: 100%;
 	height: var(--navbar-height);
-	padding: 20px;
+	padding: rem(20);
 
-	background: var(--inverted-bg-color);
 }
 
-.links {
+.link {
 	margin-left: auto;
+	padding: rem(8) rem(16);
+
+	border-radius: rem(36);
+	background: $primaryBgColor;
+
 }
 
-.mainLink {
-	margin-right: 15px;
-}
+// .mainLink {
+// 	margin-right: rem(15);
+// }

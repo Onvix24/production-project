@@ -1,9 +1,7 @@
 .Button {
-	padding: 6px 12px;
-
 	cursor: pointer;
 
-	color: var(--primary-color);
+	color: $primaryBgColor;
 }
 
 .clear,
@@ -16,25 +14,25 @@
 }
 
 .clearInverted {
-	color: var(--inverted-primary-color)
+	color: $invertedBgColor;
 }
 
 .outline {
-	color: var(--primary-color);
-	border: 1px solid var(--primary-color);
+	color: $textColor;
+	border: 1px solid $iconColor;
 	background: none;
 }
 
 .background {
-	color: var(--primary-color);
+	color: $textColor;
 	border: none;
-	background: var(--bg-color);
+	background: $primaryBgColor;
 }
 
 .backgroundInverted {
-	color: var(--inverted-primary-color);
+	color: $textColor;
 	border: none;
-	background: var(--inverted-bg-color);
+	background: $invertedBgColor;
 }
 
 .square {
@@ -63,17 +61,17 @@
 	font: var(--font-xl)
 }
 
-.size_m {
-	font: var(--font-m)
-}
+// .size_m {
+// 	font: var(--font-m)
+// }
 
-.size_l {
-	font: var(--font-l)
-}
+// .size_l {
+// 	font: var(--font-l)
+// }
 
-.size_xl {
-	font: var(--font-xl)
-}
+// .size_xl {
+// 	font: var(--font-xl)
+// }
 
 .disabled {
 	opacity: 0.5;

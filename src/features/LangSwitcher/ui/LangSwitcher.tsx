@@ -1,3 +1,4 @@
+import cls from "./LangSwitcher.module.scss";
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
@@ -18,11 +19,11 @@ export const LangSwitcher = memo(({ className, short } : LangSwitcherProps) => {
 
 	return (
 		<Button
-			className={classNames("", {}, [className])}
-			theme={ButtonTheme.CLEAR}
+			className={classNames(cls.LangSwitcher, {}, [className])}
 			onClick={toogleLanguage}
 		>
-			{t(short ? "Коротка назва мови" : "Мова")}
+			{t("Коротка назва мови")}
+			{/* {t(short ? "Коротка назва мови" : "Мова")} */}
 		</Button>
 	);
 });

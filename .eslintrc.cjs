@@ -56,4 +56,10 @@ module.exports = {
 	globals: {
 		__IS_DEV__: true,
 	},
+	settings: {
+		"react": {
+		  "version": "detect" // або конкретна версія, наприклад "16.0"
+		}
+	  }
+	  
 };

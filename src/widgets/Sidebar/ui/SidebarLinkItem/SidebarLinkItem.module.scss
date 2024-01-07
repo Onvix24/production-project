@@ -1,30 +1,29 @@
 .item {
-	display: flex;
-	gap: 21px;
+    display: flex;
+    gap: 21px;
 
-	align-items: center;
+    align-items: center;
 }
 
 .icon {
-	//margin-right: 21px;
-	fill: var(--inverted-primary-color)
+    //margin-right: 21px;
+    fill: $iconColor;
 }
 
 .link {
-	transition: opacity 0.3s;
+    transition: opacity 0.3s;
 
-	opacity: 1;
+    opacity: 1;
 
-	font-family: Nunito Sans;
-	font-size: 16px;
+    font: var(--font-m);
 }
 
 .collapsed {
-	.link {
-		width: 0;
+    .link {
+        width: 0;
 
         transition: 0.3s opacity;
 
-		opacity: 0;
-	}
+        opacity: 0;
+    }
 }

@@ -1,1 +1,1 @@
-export { Country } from "./model/types/Country";
+export { Country } from "./model/types/country";

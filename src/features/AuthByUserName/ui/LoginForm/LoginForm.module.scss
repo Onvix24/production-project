@@ -12,12 +12,14 @@
     &__button {
         margin-left: auto;
 
-        border-color: #74a2b2;
+        padding: rem(6) rem(12);
+
+        border-color: $iconColor;
         border-radius: 48px;
     }
 
     &__title {
-        // color: var(--primary-color);
+        color: $textColor;
 
         font-size: 20px;
         font-weight: 500;

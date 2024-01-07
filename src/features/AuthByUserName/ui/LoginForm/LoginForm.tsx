@@ -3,8 +3,8 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import cls from "./LoginForm.module.scss";
 import { Input } from "shared/ui/Input/Input";
-import { useDispatch, useSelector } from "react-redux";
-import { memo, useCallback } from "react";	
+import { useSelector } from "react-redux";
+import { useCallback } from "react";	
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
 import {
@@ -20,22 +20,23 @@ import {
 	getLoginFormError
 } from "features/AuthByUsername/model/selectors/getLoginFormError/getLoginFormError";
 import {
-	DymamicModuleLoader,
+	DynamicModuleLoader,
 	ReducersList
-} from "shared/lib/components/DymamicModuleLoader/DymamicModuleLoader";
+} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 export interface LoginFormProps {
     className?: string;
+	onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
 	loginForm: loginReducer,
 };
 
-// eslint-disable-next-line react/display-name
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = ({ className, onSuccess }: LoginFormProps) => {
 	const { t } = useTranslation();
-	const dispath = useDispatch();
+	const dispatch = useAppDispatch();
 
 	const username = useSelector(getLoginFormUsername);
 	const password = useSelector(getLoginFormPassword);
@@ -43,22 +44,26 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
 	const error = useSelector(getLoginFormError);
 
 	const onChangeUsername = useCallback((value: string) => {
-		dispath(loginActions.setUsername(value));
-	}, [dispath]);
+		dispatch(loginActions.setUsername(value));
+	}, [dispatch]);
 
 	const onChangePassword = useCallback((value: string) => {
-		dispath(loginActions.setPassword(value));
-	}, [dispath]);
+		dispatch(loginActions.setPassword(value));
+	}, [dispatch]);
 
-	const onLoginClick = useCallback(() => {
+	const onLoginClick = useCallback(async () => {
 		// @ts-ignore
-		dispath(loginByUsername({ username, password }));
-	}, [dispath, password, username]);
+		// dispatch(loginByUsername({ username, password }));
+		const result = await dispatch(loginByUsername({ username, password }));
+		if (result.meta.requestStatus === "fulfilled") {
+			onSuccess();
+		}
+	}, [dispatch, password, username, onSuccess]);
 
 
 
 	return (
-		<DymamicModuleLoader
+		<DynamicModuleLoader
 			reducers = {initialReducers}
 			removeAfterUnmount
 		>
@@ -90,9 +95,9 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
 					{t("Ввійти")}
 				</Button>
 			</div>
-		</DymamicModuleLoader>
+		</DynamicModuleLoader>
 
 	);;
-});
+};
 
 export default LoginForm;

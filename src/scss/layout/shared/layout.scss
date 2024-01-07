@@ -1,9 +1,3 @@
-@import "mixins";
-@import "reset";
-@import "variables/global";
-@import "themes/light";
-@import "themes/dark";
-
 body {
 	color: var(--primary-color);
 	background: var(--bg-color);

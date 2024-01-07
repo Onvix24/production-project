@@ -1,1 +1,1 @@
-export { Currency } from "./model/types/Currency";
+export { Currency } from "./model/types/currency";

@@ -1,55 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&family=Raleway:ital,wght@1,100&display=swap');
-
 .Sidebar {
-	position: relative;
+    position: relative;
 
-	width: var(--sidebar-width);
-	height: calc(100vh - var(--navbar-height));
+    width: rem(230);
+    height: calc(100vh - 132px);
+    // height: 100vh;
 
-	transition: width 0.3s ease;
+    transition: width 0.3s ease;
 
-	background: var(--inverted-bg-color);
+    border-radius: rem(32);
+
+    background: $thirdBgColor;
 }
 
 .switchers {
-	position: absolute;
-	bottom: 20px;
+    position: absolute;
+    bottom: 20px;
 
-	display: flex;
-	justify-content: center;
+    display: flex;
+    gap: rem(20);
 
-	width: 100%;
+align-items: center;
+    justify-content: center;
+
+    width: 100%;   
 }
 
 .lang {
-	margin-left: 20px;
 }
 
 .collapsedBtn {
-	position: absolute;
+    position: absolute;
+    right: 0;
+    bottom: 50%;
 
-	right: -32px;
-	bottom: 32px;
+    color: $iconColor;
+    // right: -32px;
+    // bottom: 32px;
 }
 
 .items {
-	display: flex;
-	flex-direction: column;
-	row-gap: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
 
-	margin-top: 20px;
-	margin-left: 30px;
+    margin-top: 20px;
+    margin-left: 30px;
 }
 
 .collapsed {
-	width: var(--sidebar-width-collapsed);
+    width: var(--sidebar-width-collapsed);
 
-	.switchers {
-		align-items: center;
-		flex-direction: column;
-	}
+    .switchers {
+        align-items: center;
+        flex-direction: column;
+    }
 
-	.lang {
-		margin-left: 0;
-	}
+    .lang {
+        margin-left: 0;
+    }
 }

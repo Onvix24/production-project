@@ -1,0 +1,70 @@
+* {
+	margin: 0px;
+	padding: 0px;
+
+	border: 0px;
+}
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+:focus,
+:active {
+	// outline: none;
+}
+a:focus
+a:active {
+	// outline: none;
+}
+html,
+body {
+	min-width: $minWidth + px;
+	height: 100%;
+}
+body {
+	color: $fontColor;
+
+	font-family: $fontFamily;
+	font-size: $fontSize;
+	line-height: 1;
+	//text-rendering: optimizeLegibility;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+input,
+button,
+textarea {
+	font-family: $fontFamily;
+	font-size: inherit;
+	line-height: inherit;
+}
+button {
+	cursor: pointer;
+
+	color: inherit;
+	background-color: transparent;
+}
+a {
+	text-decoration: none;
+
+	color: inherit;
+}
+ul li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: inherit;
+}
