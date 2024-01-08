@@ -34,7 +34,8 @@ module.exports = {
 		"linebreak-style": ["error", "windows"],
 		quotes: ["error", "double"],
 		semi: ["error", "always"],
-		"no-unused-vars": "warn",
+		"@typescript-eslint/no-unused-vars": "warn",
+		// "no-unused-vars": "warn",
 		"react/react-in-jsx-scope": "off",
 		"import/extension": "off",
 		"@typescript-eslint/ban-ts-comment": "warn",
@@ -60,6 +61,5 @@ module.exports = {
 		"react": {
 		  "version": "detect" // або конкретна версія, наприклад "16.0"
 		}
-	  }
-	  
+	}  
 };
