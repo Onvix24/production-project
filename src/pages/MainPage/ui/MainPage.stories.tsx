@@ -12,8 +12,7 @@ export default {
 	},
 } as Meta<typeof MainPage>;
 
-//@ts-expect-error ///
-const Template: StoryFn<typeof MainPage> = (args) => <MainPage {...args} />;
+const Template: StoryFn<typeof MainPage> = (args) => <MainPage/>;
 
 export const Normal = Template.bind({});
 Normal.args = {};

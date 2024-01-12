@@ -49,7 +49,7 @@ export const ProfileCard = ({ className } : ProfileCardProps) => {
 					/>
 					<Input
 						title="Вік"
-						value={data?.age}
+						value={JSON.stringify(data?.age)}
 						placeholder="Ваш вік"
 					/>
 					<Input
@@ -58,7 +58,7 @@ export const ProfileCard = ({ className } : ProfileCardProps) => {
 						placeholder="Ваше місто"
 					/>
 				</div>
-				<div className={cls.ProfileCard__column}>
+				<div className={cls.ProfileCard__column}>	
 					<Input
 						title="Ім'я користувача"
 						value={data?.username}

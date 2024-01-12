@@ -1,4 +1,4 @@
-import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
+import { AnyAction, CombinedState, Dispatch, EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
 import { counterSchema } from "entities/Counter";
 import { ProfileSchema } from "entities/Profile";
@@ -26,7 +26,7 @@ export interface ReducerManager {
 
 export interface ThunkExtraArguments {
     api: AxiosInstance,
-    navigate: (to: To, options?: NavigateOptions) => void,
+    navigate?: (to: To, options?: NavigateOptions) => void,
 
 }
 

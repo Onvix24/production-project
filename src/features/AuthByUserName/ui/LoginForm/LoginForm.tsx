@@ -52,8 +52,6 @@ const LoginForm = ({ className, onSuccess }: LoginFormProps) => {
 	}, [dispatch]);
 
 	const onLoginClick = useCallback(async () => {
-		// @ts-ignore
-		// dispatch(loginByUsername({ username, password }));
 		const result = await dispatch(loginByUsername({ username, password }));
 		if (result.meta.requestStatus === "fulfilled") {
 			onSuccess();
