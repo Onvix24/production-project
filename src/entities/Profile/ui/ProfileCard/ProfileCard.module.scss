@@ -1,0 +1,32 @@
+.ProfileCard {
+
+    &__row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(24);
+    }
+    &__column {
+        display: grid;
+        gap: rem(12);
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: rem(103);
+
+        margin-bottom: rem(40);
+
+    }
+
+    &__avatar {
+    }
+
+    &__edit {
+        padding: rem(6) rem(16)
+        
+    }
+}
+
+

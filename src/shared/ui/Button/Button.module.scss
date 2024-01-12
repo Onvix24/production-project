@@ -1,7 +1,7 @@
 .Button {
 	cursor: pointer;
 
-	color: $primaryBgColor;
+	color: $textColor;
 }
 
 .clear,
@@ -20,6 +20,7 @@
 .outline {
 	color: $textColor;
 	border: 1px solid $iconColor;
+	border-radius: rem(16);
 	background: none;
 }
 

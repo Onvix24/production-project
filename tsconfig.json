@@ -12,7 +12,8 @@
     // Компілятор буде обробляти не тільки TS-файли, але і JS-файли
     "allowJs": true,
     "moduleResolution": "node",
-    // Для абсолютного импорта
+    "strict": true,
+    // Для абсолютного імпорта
     "baseUrl": ".",
     "paths": {
       "*": ["./src/*"]
@@ -42,5 +43,5 @@
     "./config/jest/jest-setup.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx"
-  ]
+, "src/entities/Profile/model/selectors/getProfileUsername/getProfileUsername"  ]
 }
