@@ -9,13 +9,13 @@ import "shared/config/i18n/i18n";
 import "scss/layout/index.scss";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-	<ErrorBoundary>
-		<BrowserRouter>
-			<StoreProvider>
+	<BrowserRouter>
+		<StoreProvider>
+			<ErrorBoundary>
 				<ThemeProvider>
 					<App/>
 				</ThemeProvider>
-			</StoreProvider>
-		</BrowserRouter>
-	</ErrorBoundary>
+			</ErrorBoundary>
+		</StoreProvider>
+	</BrowserRouter>
 );

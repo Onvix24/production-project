@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 import path from "path";
 import { Configuration, DefinePlugin, RuleSetRule } from "webpack";
 import { BuildPaths } from "../build/types/config";

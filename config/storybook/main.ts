@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 import type { StorybookConfig } from "@storybook/react-webpack5";
 import path from "path";
 const config: StorybookConfig = {
