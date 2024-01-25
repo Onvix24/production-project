@@ -42,7 +42,7 @@ module.exports = {
 		"@typescript-eslint/no-unused-vars": "warn",
 		"no-underscore-dangle": "off",
 		"i18next/no-literal-string": [
-			"warn",
+			"off",
 			{
 				markupOnly: true,
 				ignoreAttribute: ["data-testid", "to"],

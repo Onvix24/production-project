@@ -37,4 +37,5 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 export interface ThunkConfig<T> {
     rejectValue: T;
     extra: ThunkExtraArguments;
+    state: StateSchema;
 }

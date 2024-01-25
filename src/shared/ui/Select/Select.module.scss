@@ -1,0 +1,20 @@
+.Select {
+    display: flex;
+    align-items: center;
+
+    padding-top: 20px;
+    gap: 20px;
+
+    &__select {
+        padding: rem(5) rem(20) rem(5) rem(5);
+
+        border: 1px solid $iconColor;
+        outline: none;
+        background: $secondaryBgColor;
+    }
+
+    &__option {
+        color: $textColor;
+        background: $primaryBgColor;
+    }
+}

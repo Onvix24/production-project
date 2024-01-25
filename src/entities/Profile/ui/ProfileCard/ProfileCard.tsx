@@ -1,86 +1,140 @@
-import { useTranslation } from "react-i18next";
 import cls from "./ProfileCard.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
-import { useSelector } from "react-redux";
-import { getProfileData } from "entities/Profile/model/selectors/getProfileData/getProfileData";
-import { getProfileiSLoading } from "entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading";
-import { getProfileError } from "entities/Profile/model/selectors/getProfileError/getProfileError";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
-import Avatar from "shared/assets/icons/profileAvatar.svg";
-
+import { Profile } from "../../model/types/profile";
+import { Loader } from "shared/ui/Loader/Loader";
+import { Currency, CurrencySelect } from "entities/Currency";
+import { Country, CountrySelect } from "entities/Country";
+import { Select } from "shared/ui/Select/Select";
 
 interface ProfileCardProps {
-    className?: string
+    className?: string;
+	data?: Profile;
+    isLoading?: boolean;
+    error?: string;
+	readOnly?: boolean;
+	onFirstnameChange?: (value?: string) => void;
+	onLastnameChange?: (value?: string) => void;
+	onAgeChange?: (value?: string) => void;
+	onAvatarChange?: (value?: string) => void;
+	onCurrencyChange?: (currency: Currency) => void;
+	onCountryChange?: (country: Country) => void;
+	onCityChange?: (value?: string) => void;
+	onUsernameChange?: (value?: string) => void;
 }
 
-export const ProfileCard = ({ className } : ProfileCardProps) => {
-    
-	const { t } = useTranslation();
-    
-	const data = useSelector(getProfileData);
-	const error = useSelector(getProfileError);
-	const isLoading = useSelector(getProfileiSLoading);
+export const ProfileCard = (props: ProfileCardProps) => {
+	const {
+		className,
+		data,
+		isLoading,
+		error,
+		readOnly,
+		onFirstnameChange,
+		onLastnameChange,
+		onAgeChange,
+		onAvatarChange,
+		onCurrencyChange,
+		onCountryChange,
+		onCityChange,
+		onUsernameChange,
+	} = props;	
+
+	if (isLoading) {
+		return (
+			<div
+				className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className] )}
+			>
+				<Loader />
+			</div>
+		);
+	}
+
+	if (error) {
+		return (
+			<div
+				className={classNames(cls.ProfileCard, {}, [
+					className,
+					cls.error,
+				])}
+			>
+				<div>Трапилася помилка</div>
+			</div>
+		);
+	}
+
+	const options = [
+		{ value: "123", content: "1 пункт" },
+		{ value: "3343242", content: "2 пункт" }
+	];
 
 	return (
 		<div className={classNames(cls.ProfileCard, {}, [className])}>
-			<div className={cls.ProfileCard__inner}>
-				<Avatar 
-					className={cls.ProfileCard__avatar}
-				/>
-				<Button
-					theme={ButtonTheme.OUTLINE}
-					className={cls.ProfileCard__edit}
-				>
-						Редагувати профіль
-				</Button>
-			</div>
 			<div className={cls.ProfileCard__row}>
 				<div className={cls.ProfileCard__column}>
 					<Input
 						title="Ім'я"
 						value={data?.first}
 						placeholder="Ваше ім'я"
+						onChange={onFirstnameChange}
+						// disabled={isLoading}
+						readOnly={readOnly}
 					/>
 					<Input
 						title="Призвище"
 						value={data?.lastname}
 						placeholder="Ваше призвище"
+						onChange={onLastnameChange}
+						// disabled={isLoading}
+						readOnly={readOnly}
 					/>
 					<Input
 						title="Вік"
 						value={JSON.stringify(data?.age)}
 						placeholder="Ваш вік"
+						onChange={onAgeChange}
+						disabled={isLoading}
+						readOnly={readOnly}
 					/>
 					<Input
 						title="Місто"
-						value={data?.first}
+						value={data?.city}
 						placeholder="Ваше місто"
+						onChange={onCityChange}
+						disabled={isLoading}
+						readOnly={readOnly}
 					/>
 				</div>
-				<div className={cls.ProfileCard__column}>	
+				<div className={cls.ProfileCard__column}>
 					<Input
 						title="Ім'я користувача"
 						value={data?.username}
 						placeholder="Ваше ім'я користувача"
+						onChange={onUsernameChange}
+						disabled={isLoading}
+						readOnly={readOnly}
 					/>
 					<Input
 						title="Посилання на аватар"
 						value={data?.avatar}
 						placeholder="Посилання на аватар"
+						onChange={onAvatarChange}
+						disabled={isLoading}
+						readOnly={readOnly}
 					/>
-					<Input
-						title="Валюта"
+					<CurrencySelect 
+						onChange={onCurrencyChange}	
 						value={data?.currency}
-						placeholder=""
+						readOnly={readOnly}
 					/>
-					<Input
-						title="Країна"
+					<CountrySelect 
+						onChange={onCountryChange}	
 						value={data?.country}
-						placeholder=""
+						readOnly={readOnly}
 					/>
 				</div>
 			</div>
+			{/* <Select options={options} label="Text"/> */}
 		</div>
 	);
 };
