@@ -44,7 +44,7 @@ export const ProfilePageHeader = ({ className } : ProfilePageHeaderProps) => {
 						Відмінити
 			</Button>
 			{
-				data?.avatar && <Avatar src={data?.avatar}/>
+				data?.avatar && <Avatar src={data.avatar}/>
 			}
 			<Button
 				theme={ButtonTheme.OUTLINE}

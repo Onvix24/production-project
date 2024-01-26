@@ -24,7 +24,6 @@ export const EditableProfileCard = ({ className } : EditableProfileCardProps) =>
 	const onFirstnameChange	= useCallback(
 		(value?: string) => {
 			dispatch(profileActions.updateProfile({ first: value || "" }));
-			//console.log(value);
 		},
 		[dispatch],
 	);
@@ -32,7 +31,6 @@ export const EditableProfileCard = ({ className } : EditableProfileCardProps) =>
 	const onLastnameChange = useCallback(
 		(value?: string) => {
 			dispatch(profileActions.updateProfile({ lastname: value || "" }));
-			//console.log(value);
 		},
 		[dispatch],
 	);
@@ -40,7 +38,6 @@ export const EditableProfileCard = ({ className } : EditableProfileCardProps) =>
 	const onAgeChange = useCallback(
 		(value?: string) => {
 			dispatch(profileActions.updateProfile({ age: Number(value ) }));
-			//console.log(value);
 		},
 		[dispatch],
 	);
@@ -48,7 +45,6 @@ export const EditableProfileCard = ({ className } : EditableProfileCardProps) =>
 	const onAvatarChange = useCallback(
 		(value?: string) => {
 			dispatch(profileActions.updateProfile({ avatar: value }));
-			//console.log(value);
 		},
 		[dispatch],
 	);
@@ -56,7 +52,6 @@ export const EditableProfileCard = ({ className } : EditableProfileCardProps) =>
 	const onCurrencyChange = useCallback(
 		(currency?: Currency) => {
 			dispatch(profileActions.updateProfile({ currency }));
-			//console.log(value);
 		},
 		[dispatch],
 	);
@@ -64,7 +59,6 @@ export const EditableProfileCard = ({ className } : EditableProfileCardProps) =>
 	const onUsernameChange = useCallback(
 		(value?: string) => {
 			dispatch(profileActions.updateProfile({ username: value }));
-			//console.log(value);
 		},
 		[dispatch],
 	);
@@ -72,7 +66,6 @@ export const EditableProfileCard = ({ className } : EditableProfileCardProps) =>
 	const onCountryChange = useCallback(
 		(country?: Country) => {
 			dispatch(profileActions.updateProfile({ country }));
-			//console.log(value);
 		},
 		[dispatch],
 	);
@@ -80,7 +73,6 @@ export const EditableProfileCard = ({ className } : EditableProfileCardProps) =>
 	const onCityChange = useCallback(
 		(value?: string) => {
 			dispatch(profileActions.updateProfile({ city: value }));
-			//console.log(value);
 		},
 		[dispatch],
 	);

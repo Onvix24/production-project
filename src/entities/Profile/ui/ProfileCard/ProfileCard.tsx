@@ -63,11 +63,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
 		);
 	}
 
-	const options = [
-		{ value: "123", content: "1 пункт" },
-		{ value: "3343242", content: "2 пункт" }
-	];
-
 	return (
 		<div className={classNames(cls.ProfileCard, {}, [className])}>
 			<div className={cls.ProfileCard__row}>
