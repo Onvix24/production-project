@@ -9,3 +9,5 @@ export {
 	UserSchema,
 	getUserAuthData
 };
+
+export  { getUserMounted } from "./model/selectors/getUserMounted/getUserMounted";
