@@ -1,0 +1,143 @@
+{
+    "folderTemplates.fileTemplates": {
+        "schema": [
+            "export interface <FTName | capitalize>Schema {",
+            "\t// Schema",
+            "}"
+        ],
+        "exportEntities": ["export { <FTName> } from \"./ui/<FTName>\";"],
+        "slice": [
+            "import { createSlice } from \"@reduxjs/toolkit\";",
+            "import { <FTName | capitalize>Schema } from \"../types/<FTName | capitalize>Schema\";",
+            "",
+            "",
+            "const initialState: <FTName | capitalize>Schema = {",
+            "\t",
+            "};",
+            "",
+            "export const <FTName | lowercase>Slice = createSlice({",
+            "\tname: \"<FTName | lowercase>\",",
+            "\tinitialState,",
+            "\treducers: {",
+            "",
+            "\t},",
+            "});",
+            "",
+            "export const { actions: <FTName | lowercase>Actions } = <FTName | lowercase>Slice;",
+            "export const { reducer: <FTName | lowercase>Reducer } = <FTName | lowercase>Slice;"
+        ],
+        "component": [
+            "import { useTranslation } from \"react-i18next\";",
+            "import cls from \"./<FTName>.module.scss\";",
+            "import { classNames } from \"shared/lib/classNames/classNames\";",
+            "",
+            "interface <FTName>Props {",
+            "\tclassName?: string",
+            "}",
+            "",
+            "export const <FTName> = ({ className } : <FTName>Props) => {",
+            "\t",
+            "\tconst { t } = useTranslation();",
+            "\t",
+            "\treturn (",
+            "\t\t<div className={classNames(cls.<FTName>, {}, [className])}>",
+            "\t\t\t$1",
+            "\t\t</div>",
+            "\t);",
+            "};"
+        ],
+        "exports": ["export { <FTName> } from \"./ui/<FTName>\";"],
+        "selectorTest": [
+            "import { StateSchema } from \"app/providers/StoreProvider/config/StateSchema\";",
+            "",
+            "import { <state | capitalize>Form<key | capitalize> } from \"./<state | capitalize>Form<key | capitalize>\";",
+            "",
+            "describe(\"<state | capitalize>Form<key | capitalize>\", () => {",
+            "\ttest(\"should return current value\", () => {",
+            "\t\tconst state: DeepPartial<StateSchema> = {",
+            "\t\t\t<state | lowercasefirstchar>: {",
+            "\t\t\t\t<key | lowercasefirstchar>: \"test\"",
+            "\t\t\t}",
+            "\t\t};",
+            "",
+            "\t\texpect(<state | capitalize>Form<key | capitalize>(state as StateSchema)).toEqual(\"test\");",
+            "\t});",
+            "",
+            "\ttest(\"should work with emty state\", () => {",
+            "\t\tconst state: DeepPartial<StateSchema> = {};",
+            "",
+            "\t\texpect(<state | capitalize>Form<key | capitalize>(state as StateSchema)).toEqual(\"\");",
+            "\t});",
+            "});"
+        ],
+        "selector": [
+            "import { StateSchema } from \"app/providers/StoreProvider\";",
+            "",
+            "export const getProfileData = (state: StateSchema) => state.profile?.data;"
+        ]
+    },
+    "folderTemplates.structures": [
+        {
+            "name": "Component features sliced design",
+            "structure": [
+                {
+                    "fileName": "ui/<FTName>.tsx",
+                    "template": "component"
+                },
+                {
+                    "fileName": "index.ts",
+                    "template": "exports"
+                },
+                {
+                    "fileName": "ui/<FTName>.module.scss",
+                    "template": ".<FTName> {}"
+                }
+            ]
+        },
+        {
+            "name": "Create selector test",
+            "omitParentDirectory": true,
+            "omitFTName": true,
+            "openFilesWhenDone": [
+                "get<state | capitalize><key | capitalize>/get<state | capitalize><key | capitalize>.ts",
+                "get<state | capitalize><key | capitalize>/get<state | capitalize><key | capitalize>.test.ts"
+            ],
+            "customVariables": ["state", "key"],
+            "structure": [
+                {
+                    "fileName": "get<state | capitalize><key | capitalize>/get<state | capitalize><key | capitalize>.ts",
+                    "template": "selector"
+                },
+                {
+                    "fileName": "get<state | capitalize><key | capitalize>/get<state | capitalize><key | capitalize>.test.ts",
+                    "template": "selectorTest"
+                }
+            ]
+        },
+        {
+            "name": "Create entities",
+            "structure": [
+                {
+                    "fileName": "ui/<FTName>.tsx",
+                    "template": "component"
+                },
+                {
+                    "fileName": "model/types/<FTName | capitalize>Schema.ts",
+                    "template": "schema"
+                },
+                {
+                    "fileName": "model/slice/<FTName | lowercase>Slice.ts",
+                    "template": "slice"
+                },
+                {
+                    "fileName": "model/selectors",
+                    "template": "EmptyDirectory"
+                },
+                {
+                    "fileName": "index.ts",
+                    "template": "exports"
+                }
+            ]
+        }
+    ]
+}
