@@ -53,7 +53,14 @@ module.exports = {
 		"react-hooks/exhaustive-deps": "error", // Checks effect dependencies
 		"no-param-reassign": "off",
 		"react/display-name": "off",
-		"no-undef": "off"
+		"no-undef": "off",
+		"react/self-closing-comp": [
+			"error",
+			{
+			  "component": true,
+			  "html": false
+			}
+		  ]
 	},
 	globals: {
 		__IS_DEV__: true,

@@ -1,6 +1,6 @@
 import { Currency } from "entities/Currency";
 import { 
-	ProfileCard, getProfileFormData, getProfileIsLoading, getProfileReadonly, profileActions 
+	ProfileCard, getProfileData, getProfileFormData, getProfileIsLoading, getProfileReadonly, profileActions 
 } from "entities/Profile";
 import { useCallback } from "react";
 import { useSelector } from "react-redux";
@@ -76,28 +76,6 @@ export const EditableProfileCard = ({ className } : EditableProfileCardProps) =>
 		},
 		[dispatch],
 	);
-
-
-	console.log(formData);
-
-	// if (formData) {
-	// 	return (
-	// 		<profileCard
-	// 			className={classNames(cls.EditableProfileCard, {}, [])}
-	// 			data={formData}
-	// 			readOnly={readOnly}
-	// 			isLoading={isLoading}
-	// 			onAgeChange={onAgeChange}
-	// 			onAvatarChange={onAvatarChange}
-	// 			onCurrencyChange={onCurrencyChange}
-	// 			onFirstNameChange={onFirstNameChange}
-	// 			onLastNameChange={onLastNameChange}
-	// 			// onCountryChange={onCountryChange}
-	// 			onUsernameChange={onChangeUsername}
-	// 			onCityChange={onChangeCity}
-	// 		/>
-	// 	);
-	// }
 	
 	return (
 		<ProfileCard

@@ -1,0 +1,40 @@
+// .ArticleDetailsSkeleton {
+//     &__list {
+//         display: flex;
+//         flex-direction: column;
+//         gap: rem(16);
+//     }
+//     &__top {
+//     }
+//     &__bottom {
+//         display: flex;
+//         flex-direction: column;
+//         gap: rem(24);
+//     }
+//     &__image {
+//     }
+
+//     &__box {
+//         display: flex;
+//         gap: rem(5);
+
+//         margin-bottom: rem(12);
+//     }
+
+//     &__content {
+//         display: flex;
+//         flex-direction: column;
+//         gap: rem(10);
+//     }
+//     &__desc {
+//         > * {
+//             &:not(:last-child) {
+//                 margin-bottom: rem(6);
+//             }
+//         }
+//     }
+//     &__readmore {
+//         display: flex;
+//         justify-content: space-between;
+//     }
+// }

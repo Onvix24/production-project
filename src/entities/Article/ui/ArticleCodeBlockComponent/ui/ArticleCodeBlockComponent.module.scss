@@ -1,0 +1,28 @@
+.ArticleCodeBlockComponent {
+    position: relative;
+
+    padding: rem(12);
+
+    border: 1px solid $textColor;
+    border-radius: rem(10);
+    background-color: $thirdBgColor;
+
+    &:not(:last-child) {
+        margin-bottom: rem(14);
+    }
+
+    &__copyBtn {
+        position: absolute;
+        top: rem(14);
+        right: rem(14);
+    }
+    &__copyIcon {
+        path {
+            stroke: $iconColor;
+        }
+    }
+    &__pre {
+    }
+    &__code {
+    }
+}

@@ -3,7 +3,6 @@ import cls from "./ProfilePage.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { 
-	ValidateProfileError,
 	fetchProfileData, getProfileValidateErrors, profileReducer
 } from "entities/Profile";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -11,7 +10,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { ProfilePageHeader } from "../ProfilePageHeader/ProfilePageHeader";
 import { EditableProfileCard } from "features/EditableProfileCard";
-import { ValidationError } from "webpack";
+import { useParams } from "react-router-dom";
 
 const reducers: ReducersList = {
 	profile: profileReducer
@@ -25,23 +24,17 @@ const ProfilePage = ({ className } : ProfilePageProps) => {
     
 	const { t } = useTranslation();
 
+	const { id } = useParams<{id: string}>();
+	
 	const dispatch = useAppDispatch();
 
 	const validateErrors = useSelector(getProfileValidateErrors);
 
-	// const validateErrorTranslate = {
-	// 	[ValidateProfileError.SERVER_ERROR]: t(""),
-	// 	[ValidateProfileError.INCORRECT_AGE]: t(""),
-	// 	[ValidateProfileError.INCORRECT_CITY]: t(""),
-	// 	[ValidateProfileError.INCORRECT_FIRST]: t(""),
-	// 	[ValidateProfileError.INCORRECT_LASTNAME]: t(""),
-	// 	[ValidateProfileError.INCORRECT_USER_DATA]: t(""),
-	// 	[ValidateProfileError.NO_DATA]: t(""),
-	// };
-
 	useEffect(() => {
-	  dispatch(fetchProfileData());
-	}, [dispatch]);
+		if(id) {
+			dispatch(fetchProfileData(id));
+		}
+	}, [dispatch, id]);
 	
 
 	return (

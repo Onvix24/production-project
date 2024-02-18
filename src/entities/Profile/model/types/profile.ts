@@ -2,8 +2,7 @@ import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
 
 export interface Profile {
-    userId?: number,
-    id?: number;
+    id?: string;
     first?: string;
     lastname?: string;
     age?: number;
@@ -15,6 +14,7 @@ export interface Profile {
 }
 
 export interface ProfileSchema {
+    id?: string;
     data?: Profile;
     formData?: Profile;
     isLoading: boolean;

@@ -1,0 +1,15 @@
+.ArticleList {
+    max-width: rem(780);
+}
+
+.GRID {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.COLUMN {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}

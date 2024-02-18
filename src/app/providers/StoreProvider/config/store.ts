@@ -7,6 +7,7 @@ import { userReducer } from "entities/User";
 import { createReducerManager } from "./reducerManager";
 import { $api } from "shared/api/api";
 import { To, NavigateOptions } from "react-router-dom";
+import { rtkQueryApi } from "shared/api/rtkQueryApi";
 
 export function createReduxStore(
 	initialState?: StateSchema,
@@ -16,7 +17,8 @@ export function createReduxStore(
 	const rootRedusers: ReducersMapObject<StateSchema> = {
 		...asyncReducers,
 		counter: counterReducer,
-		user: userReducer
+		user: userReducer,
+		[rtkQueryApi.reducerPath]: rtkQueryApi.reducer,
 	};
 
 	const reducerManager = createReducerManager(rootRedusers);
@@ -34,7 +36,7 @@ export function createReduxStore(
 			thunk: {
 				extraArgument
 			},
-		})
+		}).concat(rtkQueryApi.middleware),
 	});
 
 	// @ts-ignore

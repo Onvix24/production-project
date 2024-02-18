@@ -1,0 +1,9 @@
+.ArticleDetailsPage {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+
+    &__commentsTitle {
+        margin-top: rem(20);
+    }
+}

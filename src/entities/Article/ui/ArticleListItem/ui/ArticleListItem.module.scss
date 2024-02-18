@@ -1,0 +1,127 @@
+.ArticleListItem {
+    $p: &;
+
+    cursor: pointer;
+
+    &_grid {
+        max-width: rem(249);
+        #{$p} {
+            &__image {
+                width: 100%;
+            }
+            &__contentWrapper {
+                display: grid;
+                gap: rem(8);
+
+                padding: rem(8);
+            }
+            &__title {
+                width: 100%;
+
+                font-size: rem(24);
+            }
+
+            &__details {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                font-size: rem(16);
+            }
+            &__createdAt {
+            }
+            &__wathers {
+                display: flex;
+            }
+            &__views {
+            }
+
+            &__icon {
+                margin-right: rem(8);
+            }
+
+            &__userWrapper {
+                display: flex;
+                align-items: center;
+                gap: rem(4);
+            }
+            &__creator {
+            }
+        }
+    }  
+    &_column {
+        max-width: rem(780);
+        #{$p} {
+            &__card {
+                display: flex;
+                flex-direction: column;
+
+                padding: rem(20);
+                row-gap: rem(16);
+            }
+
+            &__header {
+                display: flex;
+                align-items: center;
+                gap: rem(4);
+            }
+            &__image {
+                width: 100%;
+            }
+            &__contentWrapper {
+                display: grid;
+                gap: rem(8);
+
+                padding: rem(8);
+            }
+            &__title {
+                width: 100%;
+
+                font-family: consolas, "Roboto", serif;
+                font-size: rem(32);
+                font-weight: 900;
+                
+            }
+
+            &__subtitle {
+                font-family: consolas, "Roboto", serif;
+                font-size: rem(24);
+            }
+            &__bottom {
+                display: flex;
+                flex-direction: column;
+                gap: rem(16);
+            }
+            &__details {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                font-size: rem(16);
+            }
+            &__readMore {
+                padding: rem(8) rem(16);
+            }
+            &__createdAt {
+            }
+            &__wathers {
+                display: flex;
+            }
+            &__views {
+            }
+
+            &__icon {
+                margin-right: rem(8);
+            }
+
+            &__userWrapper {
+                display: flex;
+                align-items: center;
+                gap: rem(4);
+            }
+            &__creator {
+            }
+        }
+    }
+}
+ 

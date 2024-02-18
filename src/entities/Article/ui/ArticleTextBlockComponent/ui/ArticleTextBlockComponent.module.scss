@@ -1,0 +1,17 @@
+.ArticleTextBlockComponent {
+    &:not(:last-child) {
+        margin-bottom: rem(14);
+    }
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: rem(8);
+        }
+    }
+
+    &__paragraphs {
+    }
+
+    &__paragraph {
+    }
+}

@@ -27,24 +27,22 @@
             "export const { reducer: <FTName | lowercase>Reducer } = <FTName | lowercase>Slice;"
         ],
         "component": [
-            "import { useTranslation } from \"react-i18next\";",
             "import cls from \"./<FTName>.module.scss\";",
             "import { classNames } from \"shared/lib/classNames/classNames\";",
+            "import { memo } from \"react\";",
             "",
             "interface <FTName>Props {",
             "\tclassName?: string",
             "}",
             "",
-            "export const <FTName> = ({ className } : <FTName>Props) => {",
-            "\t",
-            "\tconst { t } = useTranslation();",
+            "export const <FTName> = memo(({ className } : <FTName>Props) => {",
             "\t",
             "\treturn (",
             "\t\t<div className={classNames(cls.<FTName>, {}, [className])}>",
-            "\t\t\t$1",
+            "\t\t\t<FTName>",
             "\t\t</div>",
             "\t);",
-            "};"
+            "});"
         ],
         "exports": ["export { <FTName> } from \"./ui/<FTName>\";"],
         "selectorTest": [

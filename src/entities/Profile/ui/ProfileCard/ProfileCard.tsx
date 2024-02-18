@@ -6,6 +6,7 @@ import { Loader } from "shared/ui/Loader/Loader";
 import { Currency, CurrencySelect } from "entities/Currency";
 import { Country, CountrySelect } from "entities/Country";
 import { Select } from "shared/ui/Select/Select";
+import { ProfileCardSkeleton } from "./ProfileCardSkeleton";
 
 interface ProfileCardProps {
     className?: string;
@@ -45,7 +46,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 			<div
 				className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className] )}
 			>
-				<Loader />
+				<ProfileCardSkeleton/>
 			</div>
 		);
 	}

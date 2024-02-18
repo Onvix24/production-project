@@ -1,0 +1,23 @@
+.Skeleton {
+	// display: inline-block;
+
+	width: 100%;
+
+	animation: loading 1.8s ease-in-out infinite;
+
+	background: linear-gradient(130deg, $hintColor 0%, $primaryBgColor  50%, $hintColor 100%);
+
+	background-size: 200% 200%;
+
+	@keyframes loading {
+		0% {
+			background-position: 0% 0%;
+		}
+		50% {
+			background-position: 100% 100%;
+		}
+		100% {
+			background-position: 0% 0%;
+		}
+	}
+}

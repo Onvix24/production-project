@@ -1,10 +1,12 @@
 import { AnyAction, CombinedState, Dispatch, EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
+import { ArticleDetailsSchema } from "entities/Article";
 import { counterSchema } from "entities/Counter";
 import { ProfileSchema } from "entities/Profile";
 import { UserSchema } from "entities/User";
 import { LoginSchema } from "features/AuthByUsername";
 import { NavigateOptions, To } from "react-router-dom";
+import { rtkQueryApi } from "shared/api/rtkQueryApi";
 
 export interface StateSchema {
     counter: counterSchema;
@@ -13,6 +15,8 @@ export interface StateSchema {
     //асинхронні редюсери
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
+    articleDetails?: ArticleDetailsSchema;
+    [rtkQueryApi.reducerPath]: ReturnType<typeof rtkQueryApi.reducer>
 }
 
 export type StateSchemaKey = keyof StateSchema;

@@ -1,0 +1,28 @@
+.CommentCard {
+    margin-top: rem(10);
+
+    border: 1px solid red;
+
+    &__header {
+        display: flex;
+        gap: rem(12);
+
+        align-items: center;
+
+        margin-bottom: rem(15);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__avatar {
+    }
+
+    &__username {
+        color: ico
+    }
+
+    &__text {
+    }
+}
