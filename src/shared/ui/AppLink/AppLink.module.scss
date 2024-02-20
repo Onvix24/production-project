@@ -1,15 +1,15 @@
 .AppLink {
-	color: var(--primary-color)
+	color: $textColor;
 }
 
-.primary {
-	color: var(--primary-color);
-}
+// .primary {
+// 	color: $primaryBgColor
+// }
 
-.secondary {
-	color: var(--inverted-primary-color);
-}
+// .secondary {
+// 	color: var(--inverted-primary-color);
+// }
 
-.yellow{
-	color: #fafa00;
-}
+// .yellow{
+// 	color: #fafa00;
+// }

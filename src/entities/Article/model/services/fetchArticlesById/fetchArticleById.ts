@@ -12,7 +12,7 @@ export const fetchArticleById = createAsyncThunk<Article, string, ThunkConfig<st
 			const token = localStorage.getItem(USER_LOCALSTORAGE_KEY) || "";
 			const encodedToken = encodeURIComponent(token);
 			
-			const response = await extra.api.get<Article>(`/articles/${articleId}&_expand=user`, {
+			const response = await extra.api.get<Article>(`/articles/${articleId}?_expand=user`, {
 				headers: {
 					"Authorization": `${encodedToken}`			
 				}

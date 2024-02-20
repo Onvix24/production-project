@@ -2,6 +2,8 @@
     display: flex;
     column-gap: rem(16);
 
+    align-items: center;
+
     max-width: rem(780);
 
     &__input {

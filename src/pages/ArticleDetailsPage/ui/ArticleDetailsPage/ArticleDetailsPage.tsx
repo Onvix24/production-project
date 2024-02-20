@@ -28,8 +28,8 @@ const ArticleDetailsPage = ({ className } : ArticleDetailsPageProps) => {
 	return (
 		<div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
 			<ArticleDetails articleId={id}/>
-			<AddArticleComments articleId={id}/>
-			<CommentList comments={data}/>
+			<AddArticleComments articleId={id} isLoading={isLoading}/>
+			<CommentList comments={data} isLoading={isLoading}/>
 		</div>
 	);
 };

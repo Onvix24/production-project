@@ -1,3 +1,16 @@
 .CommentList {
     max-width: rem(780);
+
+    &__card {
+        &:not(:last-child) {
+            margin-bottom: rem(16);
+        }
+    }
+
+    &__header {
+        display: flex;
+        gap: rem(8);
+
+        align-items: center;
+    }
 }

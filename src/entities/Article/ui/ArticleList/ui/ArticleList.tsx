@@ -9,7 +9,7 @@ interface ArticleListProps {
 	className?: string,
 	articles: Article[],
 	isLoading?: boolean,
-	error?: boolean;
+	error?: string;
 	view?: ArticleListView;
 }
 
@@ -32,11 +32,15 @@ export const ArticleList = memo((props : ArticleListProps) => {
 	}
 
 	const renderArticleItem = (article: Article) => (
-		<ArticleListItem article={article} view={view}/>
+		<ArticleListItem 
+			article={article}
+		 	view={view}
+		 	key={article.id}
+		 />
 	);
 
 	return (		
-		<div className={classNames(cls.ArticleList, {}, [className])}>
+		<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
 			{articles.length > 0
 				? articles.map(renderArticleItem)
 				: error

@@ -1,8 +1,9 @@
 .CommentCard {
     margin-top: rem(10);
+    padding: rem(8);
 
-    border: 1px solid red;
-
+    border-radius: rem(12);
+    background-color: $thirdBgColor;
     &__header {
         display: flex;
         gap: rem(12);
@@ -19,8 +20,8 @@
     &__avatar {
     }
 
-    &__username {
-        color: ico
+    &__username{
+        
     }
 
     &__text {

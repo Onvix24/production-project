@@ -1,0 +1,12 @@
+.ChangeArticleListView {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: rem(100);
+
+    padding: rem(10);
+
+    border-radius: rem(32);
+    background-color: $thirdBgColor;
+}

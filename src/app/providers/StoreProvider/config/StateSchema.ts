@@ -5,6 +5,7 @@ import { counterSchema } from "entities/Counter";
 import { ProfileSchema } from "entities/Profile";
 import { UserSchema } from "entities/User";
 import { LoginSchema } from "features/AuthByUsername";
+import { ArticlesPageSchema } from "pages/ArticlesPage";
 import { NavigateOptions, To } from "react-router-dom";
 import { rtkQueryApi } from "shared/api/rtkQueryApi";
 
@@ -16,6 +17,7 @@ export interface StateSchema {
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
+    articlesPage?: ArticlesPageSchema
     [rtkQueryApi.reducerPath]: ReturnType<typeof rtkQueryApi.reducer>
 }
 

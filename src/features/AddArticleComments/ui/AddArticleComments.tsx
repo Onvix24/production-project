@@ -8,13 +8,15 @@ import { Icon } from "shared/ui/Icon/Icon";
 import { useSelector } from "react-redux";
 import { getUserAuthData } from "entities/User";
 import { useUpdateArticleCommentsMutation } from "shared/api/rtkQueryApi";
+import { Skeleton } from "shared/ui/Skeleton";
 
 interface AddArticleCommentsProps {
 	className?: string,
 	articleId?: string | number,
+	isLoading: boolean,
 }
 
-export const AddArticleComments = memo(({ className, articleId } : AddArticleCommentsProps) => {
+export const AddArticleComments = memo(({ className, articleId, isLoading } : AddArticleCommentsProps) => {
 	
 	const [ commentText, setCommentText] = useState<string>("");
 
@@ -40,6 +42,17 @@ export const AddArticleComments = memo(({ className, articleId } : AddArticleCom
 	  }, [articleId, authData, commentText, updateArticleComments],
 	);
 	
+	if(isLoading) {
+		return (
+			<div className={classNames(cls.AddArticleComments, {}, [className])}>
+				<Skeleton width={"80%"} height={30} border="12px"
+					className={cls.AddArticleComments__input}
+				/>
+				<Skeleton width={32} height={30} border="12px"/>
+			</div>
+		);
+	}
+
 	return (
 		<div className={classNames(cls.AddArticleComments, {}, [className])}>
 			<Input 

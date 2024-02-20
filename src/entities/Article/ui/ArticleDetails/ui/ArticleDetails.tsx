@@ -123,18 +123,6 @@ export const ArticleDetails = memo(({ className, articleId } : ArticleDetailsPro
 	return (
 		<DynamicModuleLoader reducers={redusers} removeAfterUnmount>
 			<div className={classNames(cls.ArticleDetails, {}, [className])}>
-				{/* <div className={cls.ArticleDetails__top}>		
-					<Avatar src={data?.img} size={32}/>
-					<span>Ulbi TV</span>
-					<span>{data?.createdAt}</span>
-				</div>
-				<h2>{data?.title}</h2>
-				<h3>{data?.subtitle}</h3>
-				<img 
-					width={732}
-					height={420}
-					src={data?.img}
-				/> */}
 				{content}
 				{data?.blocks.map(renderBlock)}
 			</div>

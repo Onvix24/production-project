@@ -22,7 +22,7 @@ export const ProfileCardSkeleton = ({ className } : ProfileCardSkeletonProps) =>
 					<Skeleton width={400} height={30} border="12px"/>
 					<Skeleton width={400} height={30} border="12px"/>
 					<Skeleton width={400} height={30} border="12px"/>
-                </div>
+				</div>
 			</div>
 		</div>
 	);

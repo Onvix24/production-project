@@ -1,6 +1,6 @@
 import cls from "./ArticleListItem.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
-import { memo } from "react";
+import { memo, useCallback } from "react";
 import { Article, ArticleBlockType, ArticleListView, ArticleTextBlock } from "../../../model/types/Article";
 import { Icon } from "shared/ui/Icon/Icon";
 import WatcherIcon from "shared/assets/icons/Article/eye.svg";
@@ -11,6 +11,7 @@ import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { ArticleTextBlockComponent } from "../../ArticleTextBlockComponent";
 import { text } from "stream/consumers";
+import { useNavigate } from "react-router-dom";
 
 interface ArticleListItemProps {
 	className?: string,
@@ -20,6 +21,12 @@ interface ArticleListItemProps {
 
 export const ArticleListItem = memo(({ className, article, view } : ArticleListItemProps) => {
 	 
+	const navigate = useNavigate(); 
+
+	const onOpenArticle = useCallback(() => {
+		navigate(RoutePath.article_details + article.id);
+	}, [article.id, navigate]);
+
 	if(view === ArticleListView.COLUMN) {
 	
 		let textBlock = article.blocks.find(
@@ -27,7 +34,7 @@ export const ArticleListItem = memo(({ className, article, view } : ArticleListI
 		) as ArticleTextBlock;
 
 		return (
-			<div className={classNames(cls.ArticleListItem, {}, [className, cls.ArticleListItem_column])}>
+			<div className={classNames(cls.ArticleListItem, {}, [className, cls.ArticleListItem_column, cls[view]])}>
 				<Card className={cls.ArticleListItem__card}>
 					<div className={cls.ArticleListItem__header}>
 						<Avatar size={32} src={article.user.avatar}/>
@@ -45,6 +52,7 @@ export const ArticleListItem = memo(({ className, article, view } : ArticleListI
 							<Button 
 								className={cls.ArticleListItem__readMore}
 								theme={ButtonTheme.OUTLINE}
+								onClick={onOpenArticle}
 							>
 								Читати далі...
 							</Button>
@@ -60,12 +68,12 @@ export const ArticleListItem = memo(({ className, article, view } : ArticleListI
 	}
 
 	return (
-		<div className={classNames(cls.ArticleListItem, {}, [className, cls.ArticleListItem_grid])}>
-			<Card>
+		<div className={classNames(cls.ArticleListItem, {}, [className, cls.ArticleListItem_grid, cls[view]])}>
+			<Card onClick={onOpenArticle}>
 				<img className={cls.ArticleListItem__image} src={article.img} alt={article.title} />
 				<div className={cls.ArticleListItem__contentWrapper}>
 					<h3 className={cls.ArticleListItem__title}>
-						Как сделать робота на питоне без использования кода в питон джава с+++
+						{article.title}
 					</h3>
 					<div className={cls.ArticleListItem__details}>
 						<span className={cls.ArticleListItem__createdAt}>{article.createdAt}</span>
