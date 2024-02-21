@@ -1,13 +1,11 @@
 import { CombinedState, Reducer, ReducersMapObject, configureStore } from "@reduxjs/toolkit";
 import { StateSchema, ThunkExtraArguments } from "./StateSchema";
-import { counterReducer } from "entities/Counter";
-// import { counterReducer } from "../../../../entities/Counter";
-import { userReducer } from "entities/User";
-// import { userReducer } from "../../../../entities/User";
+import { counterReducer } from "@/entities/Counter";
+import { userReducer } from "@/entities/User";
 import { createReducerManager } from "./reducerManager";
-import { $api } from "shared/api/api";
+import { $api } from "@/shared/api/api";
 import { To, NavigateOptions } from "react-router-dom";
-import { rtkQueryApi } from "shared/api/rtkQueryApi";
+import { rtkQueryApi } from "@/shared/api/rtkQueryApi";
 
 export function createReduxStore(
 	initialState?: StateSchema,

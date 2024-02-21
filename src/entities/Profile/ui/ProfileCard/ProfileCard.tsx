@@ -1,11 +1,9 @@
 import cls from "./ProfileCard.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Input } from "shared/ui/Input/Input";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Input } from "@/shared/ui/Input/Input";
 import { Profile } from "../../model/types/profile";
-import { Loader } from "shared/ui/Loader/Loader";
-import { Currency, CurrencySelect } from "entities/Currency";
-import { Country, CountrySelect } from "entities/Country";
-import { Select } from "shared/ui/Select/Select";
+import { Currency, CurrencySelect } from "@/entities/Currency";
+import { Country, CountrySelect } from "@/entities/Country";
 import { ProfileCardSkeleton } from "./ProfileCardSkeleton";
 
 interface ProfileCardProps {
@@ -79,7 +77,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 					<Input
 						title="Призвище"
 						value={data?.lastname}
-						placeholder="Ваше призвище"
+						placeholder="Ваше прізвище"
 						onChange={onLastnameChange}
 						// disabled={isLoading}
 						readOnly={readOnly}

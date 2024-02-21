@@ -1,29 +1,29 @@
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import cls from "./LoginForm.module.scss";
-import { Input } from "shared/ui/Input/Input";
+import { Input } from "@/shared/ui/Input/Input";
 import { useSelector } from "react-redux";
 import { useCallback } from "react";	
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
 import {
 	getLoginFormUsername
-} from "features/AuthByUsername/model/selectors/getLoginFormUsername/getLoginFormUsername";
+} from "@/features/AuthByUsername/model/selectors/getLoginFormUsername/getLoginFormUsername";
 import {
 	getLoginFormPassword
-} from "features/AuthByUsername/model/selectors/getLoginFormPassword/getLoginFormPassword";
+} from "@/features/AuthByUsername/model/selectors/getLoginFormPassword/getLoginFormPassword";
 import {
 	getLoginFormIsLoading
-} from "features/AuthByUsername/model/selectors/getLoginFormIsLoading/getLoginFormIsLoading";
+} from "@/features/AuthByUsername/model/selectors/getLoginFormIsLoading/getLoginFormIsLoading";
 import {
 	getLoginFormError
-} from "features/AuthByUsername/model/selectors/getLoginFormError/getLoginFormError";
+} from "@/features/AuthByUsername/model/selectors/getLoginFormError/getLoginFormError";
 import {
 	DynamicModuleLoader,
 	ReducersList
-} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 export interface LoginFormProps {
     className?: string;

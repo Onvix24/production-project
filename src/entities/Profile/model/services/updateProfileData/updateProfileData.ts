@@ -1,9 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ThunkConfig } from "app/providers/StoreProvider";
+import { ThunkConfig } from "@/app/providers/StoreProvider";
 import { Profile, ValidateProfileError } from "../../types/profile";
 import { validateProfileData } from "../validateProfileData/validateProfileData";
 import { getProfileFormData } from "../../selectors/getProfileFormData/getProfileFormData";
-import { USER_LOCALSTORAGE_KEY } from "shared/const/localStorage";
+import { USER_LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
 
 export const updateProfileData = createAsyncThunk<Profile, string, ThunkConfig<ValidateProfileError[]>>(
 	"profile/updateProfileData",

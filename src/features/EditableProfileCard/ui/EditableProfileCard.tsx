@@ -1,13 +1,13 @@
-import { Currency } from "entities/Currency";
+import { Currency } from "@/entities/Currency";
 import { 
 	ProfileCard, getProfileData, getProfileFormData, getProfileIsLoading, getProfileReadonly, profileActions 
-} from "entities/Profile";
+} from "@/entities/Profile";
 import { useCallback } from "react";
 import { useSelector } from "react-redux";
-import { classNames } from "shared/lib/classNames/classNames";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import cls from "./EditableProfileCard.module.scss";
-import { Country } from "entities/Country";
+import { Country } from "@/entities/Country";
 
 interface EditableProfileCardProps {
     className?: string

@@ -1,19 +1,18 @@
 import cls from "./ProfilePageHeader.module.scss";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { useCallback } from "react";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { 
 	getProfileData,
-	getProfileFormData, 
 	getProfileIsLoading, 
 	getProfileReadonly, profileActions,
 	updateProfileData 
-} from "entities/Profile";
+} from "@/entities/Profile";
 import { useSelector } from "react-redux";
-import { Avatar } from "shared/ui/Avatar/Avatar";
-import { classNames } from "shared/lib/classNames/classNames";
-import { getUserAuthData } from "entities/User";
-import { Skeleton } from "shared/ui/Skeleton";
+import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { getUserAuthData } from "@/entities/User";
+import { Skeleton } from "@/shared/ui/Skeleton";
 import { useParams } from "react-router-dom";
 
 interface ProfilePageHeaderProps {

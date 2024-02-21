@@ -1,7 +1,7 @@
 
-import { Select } from "shared/ui/Select/Select";
+import { Select } from "@/shared/ui/Select/Select";
 import cls from "./CountrySelect.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { memo, useCallback } from "react";
 import { Country } from "../../model/types/country";      
 

@@ -1,11 +1,11 @@
 import cls from "./ChangeArticleListView.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { memo } from "react";
-import ColumnView from "shared/assets/icons/columnView.svg";
-import GridView from "shared/assets/icons/gridView.svg";
-import { ArticleListView } from "entities/Article";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { Icon } from "shared/ui/Icon/Icon";
+import ColumnView from "@/shared/assets/icons/columnView.svg";
+import GridView from "@/shared/assets/icons/gridView.svg";
+import { ArticleListView } from "@/entities/Article";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Icon } from "@/shared/ui/Icon/Icon";
 
 interface ChangeArticleListViewProps {
 	className?: string,

@@ -5,8 +5,8 @@ import { User, UserSchema } from "./model/types/user";
 export {
 	userActions,
 	userReducer,
-	User,
-	UserSchema,
+	type User,
+	type UserSchema,
 	getUserAuthData
 };
 

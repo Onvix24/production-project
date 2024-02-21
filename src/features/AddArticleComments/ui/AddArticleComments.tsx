@@ -1,14 +1,14 @@
 import cls from "./AddArticleComments.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { memo, useCallback, useState } from "react";
-import { Input } from "shared/ui/Input/Input";
-import SendIcon from "shared/assets/icons/Article/send.svg";
-import { Button } from "shared/ui/Button/Button";
-import { Icon } from "shared/ui/Icon/Icon";
+import { Input } from "@/shared/ui/Input/Input";
+import SendIcon from "@/shared/assets/icons/Article/send.svg";
+import { Button } from "@/shared/ui/Button/Button";
+import { Icon } from "@/shared/ui/Icon/Icon";
 import { useSelector } from "react-redux";
-import { getUserAuthData } from "entities/User";
-import { useUpdateArticleCommentsMutation } from "shared/api/rtkQueryApi";
-import { Skeleton } from "shared/ui/Skeleton";
+import { getUserAuthData } from "@/entities/User";
+import { useUpdateArticleCommentsMutation } from "@/shared/api/rtkQueryApi";
+import { Skeleton } from "@/shared/ui/Skeleton";
 
 interface AddArticleCommentsProps {
 	className?: string,

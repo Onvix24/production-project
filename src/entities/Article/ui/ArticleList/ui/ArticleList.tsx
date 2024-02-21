@@ -1,7 +1,7 @@
 import cls from "./ArticleList.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
-import { memo, useCallback, useMemo } from "react";
-import { Article, ArticleListView } from "entities/Article/model/types/Article";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { memo } from "react";
+import { Article, ArticleListView } from "@/entities/Article/model/types/Article";
 import { ArticleListItem } from "../../ArticleListItem";
 import { ArticleListItemSkeleton } from "../../ArticleListItem/ui/ArticleListItemSkeleton";
 

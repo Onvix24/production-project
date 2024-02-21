@@ -1,6 +1,6 @@
-import { Select } from "shared/ui/Select/Select";
+import { Select } from "@/shared/ui/Select/Select";
 import cls from "./CurrencySelect.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { Currency } from "../../model/types/currency";
 import { memo, useCallback } from "react";
 

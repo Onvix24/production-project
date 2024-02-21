@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ThunkConfig } from "app/providers/StoreProvider";
+import { ThunkConfig } from "@/app/providers/StoreProvider";
 import { Article } from "../../types/Article";
-import { USER_LOCALSTORAGE_KEY } from "shared/const/localStorage";
+import { USER_LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
 
 export const fetchArticleById = createAsyncThunk<Article, string, ThunkConfig<string>>(
 	"profile/fetchArticleById",

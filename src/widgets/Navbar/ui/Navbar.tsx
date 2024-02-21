@@ -1,10 +1,10 @@
 /* eslint-disable i18next/no-literal-string */
 import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import cls from "./Navbar.module.scss";
-import { LoginModal } from "features/AuthByUsername";
+import { LoginModal } from "@/features/AuthByUsername";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserAuthData, userActions } from "../../../entities/User";
 

@@ -1,6 +1,6 @@
 import cls from "./ArticleTextBlockComponent.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
-import { ArticleTextBlock } from "entities/Article/model/types/Article";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { ArticleTextBlock } from "@/entities/Article/model/types/Article";
 
 interface ArticleTextBlockProps {
 	className?: string;

@@ -1,6 +1,6 @@
-import { ArticleImageBlock } from "entities/Article/model/types/Article";
+import { ArticleImageBlock } from "@/entities/Article/model/types/Article";
 import cls from "./ArticleImageBlockComponent.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 interface ArticleImageBlockProps {
 	className?: string;

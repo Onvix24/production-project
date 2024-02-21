@@ -1,9 +1,9 @@
 import cls from "./ArticleDetails.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
-import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { articleDetailsReducer } from "entities/Article/model/slice/articleDetailsSlice";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { fetchArticleById } from "entities/Article/model/services/fetchArticlesById/fetchArticleById";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { DynamicModuleLoader, ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { articleDetailsReducer } from "@/entities/Article/model/slice/articleDetailsSlice";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { fetchArticleById } from "@/entities/Article/model/services/fetchArticlesById/fetchArticleById";
 import { memo, useCallback, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { 
@@ -13,12 +13,11 @@ import  {
 	 getArticleDetailsError
 } from "../../../model/selectors/ArticleDetails/getArticleDetailsError/getArticleDetailsError";
 import { ArticleDetailsSkeleton } from "./ArticleDetailsSkeleton";
-import { Avatar } from "shared/ui/Avatar/Avatar";
+import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { 
 	getArticleDetailsIsLoading
 } from "../../../model/selectors/ArticleDetails/getArticleDetailsIsLoading/getArticleDetailsIsLoading";
-import { Icon } from "shared/ui/Icon/Icon";
-import { ArticleBlock } from "entities/Article/model/types/Article";
+import { ArticleBlock } from "@/entities/Article/model/types/Article";
 import { ArticleTextBlockComponent } from "../../ArticleTextBlockComponent";
 import { ArticleImageBlockComponent } from "../../ArticleImageBlock";
 import { ArticleCodeBlockComponent } from "../../ArticleCodeBlockComponent";

@@ -1,15 +1,15 @@
 import { useTranslation } from "react-i18next";
 import cls from "./ProfilePage.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
-import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { DynamicModuleLoader, ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { 
 	fetchProfileData, getProfileValidateErrors, profileReducer
-} from "entities/Profile";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+} from "@/entities/Profile";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { ProfilePageHeader } from "../ProfilePageHeader/ProfilePageHeader";
-import { EditableProfileCard } from "features/EditableProfileCard";
+import { EditableProfileCard } from "@/features/EditableProfileCard";
 import { useParams } from "react-router-dom";
 
 const reducers: ReducersList = {

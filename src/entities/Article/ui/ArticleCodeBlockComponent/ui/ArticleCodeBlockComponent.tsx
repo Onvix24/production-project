@@ -1,8 +1,8 @@
 import cls from "./ArticleCodeBlockComponent.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
-import { ArticleCodeBlock } from "entities/Article/model/types/Article";
-import { Button } from "shared/ui/Button/Button";
-import CopyIcon from "shared/assets/icons/Article/copy.svg";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { ArticleCodeBlock } from "@/entities/Article/model/types/Article";
+import { Button } from "@/shared/ui/Button/Button";
+import CopyIcon from "@/shared/assets/icons/Article/copy.svg";
 import { useCallback } from "react";
 
 interface ArticleCodeBlockProps {

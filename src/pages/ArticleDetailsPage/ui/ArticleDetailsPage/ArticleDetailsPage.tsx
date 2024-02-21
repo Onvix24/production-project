@@ -1,11 +1,11 @@
 import cls from "./ArticleDetailsPage.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { memo } from "react";
-import { ArticleDetails } from "entities/Article";
+import { ArticleDetails } from "@/entities/Article";
 import { useParams } from "react-router-dom";
-import { CommentList } from "entities/Comment";
-import { useGetCommentsQuery } from "shared/api/rtkQueryApi";
-import { AddArticleComments } from "features/AddArticleComments";
+import { CommentList } from "@/entities/Comment";
+import { useGetCommentsQuery } from "@/shared/api/rtkQueryApi";
+import { AddArticleComments } from "@/features/AddArticleComments";
 
 interface ArticleDetailsPageProps {
 	className?: string,

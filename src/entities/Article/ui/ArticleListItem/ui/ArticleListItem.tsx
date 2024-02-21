@@ -1,16 +1,14 @@
 import cls from "./ArticleListItem.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { memo, useCallback } from "react";
 import { Article, ArticleBlockType, ArticleListView, ArticleTextBlock } from "../../../model/types/Article";
-import { Icon } from "shared/ui/Icon/Icon";
-import WatcherIcon from "shared/assets/icons/Article/eye.svg";
-import { Avatar } from "shared/ui/Avatar/Avatar";
-import { Card } from "shared/ui/Card/Card";
-import { AppLink } from "shared/ui/AppLink/AppLink";
-import { RoutePath } from "shared/config/routeConfig/routeConfig";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { Icon } from "@/shared/ui/Icon/Icon";
+import WatcherIcon from "@/shared/assets/icons/Article/eye.svg";
+import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { Card } from "@/shared/ui/Card/Card";
+import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { ArticleTextBlockComponent } from "../../ArticleTextBlockComponent";
-import { text } from "stream/consumers";
 import { useNavigate } from "react-router-dom";
 
 interface ArticleListItemProps {

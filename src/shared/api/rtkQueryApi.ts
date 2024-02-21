@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Comment } from "entities/Comment";
-import { USER_LOCALSTORAGE_KEY } from "shared/const/localStorage";
+import { Comment } from "@/entities/Comment";
+import { USER_LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
 
 interface updateArticleComments {
 	articleId: number | string;

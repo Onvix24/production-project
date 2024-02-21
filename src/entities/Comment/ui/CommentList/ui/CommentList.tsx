@@ -1,5 +1,5 @@
 import cls from "./CommentList.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { memo } from "react";
 import { CommentCard } from "../../CommentCard";
 import { Comment } from "../../../model/types/Comment";

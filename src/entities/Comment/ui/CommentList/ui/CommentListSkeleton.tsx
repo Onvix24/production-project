@@ -1,6 +1,6 @@
-import { Skeleton } from "shared/ui/Skeleton";
+import { Skeleton } from "@/shared/ui/Skeleton";
 import cls from "./CommentList.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 interface CommentListSkeletonProps {
     className?: string
