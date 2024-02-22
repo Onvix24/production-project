@@ -1,4 +1,4 @@
-import React from "react";
+import { Page } from "@/shared/ui/Page/Page";
 import { useTranslation } from "react-i18next";
 
 const AboutPage = () => {
@@ -6,9 +6,9 @@ const AboutPage = () => {
 	const { t } = useTranslation("about");
 
 	return (
-		<div>
+		<Page>
 			{t("Про сайт")}
-		</div>
+		</Page>
 	);
 };
 

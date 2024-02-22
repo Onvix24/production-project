@@ -45,7 +45,13 @@ export const ChangeArticleListView = memo(({ className, view, onViewClick } : Ch
 							theme={ButtonTheme.CLEAR}
 							onClick={onClickHandler(buttonViewType.view)}
 						>
-							<Icon Svg={buttonViewType.icon}/>
+							<Icon 
+								Svg={buttonViewType.icon}
+								className={
+									classNames(cls.ChangeArticleListView__icon, {
+										[cls.ChangeArticleListView__icon_selected]: buttonViewType.view === view })
+								}
+							/>
 						</Button>
 					)
 				)

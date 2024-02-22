@@ -7,10 +7,17 @@ body {
 .app {
 	min-height: 100vh;
 
+    padding: rem(32);
+
+    background: $secondaryBgColor;
 }
 
 .content-page {
 	display: flex;
+
+    gap: rem(32);
+
+    padding-top: rem(12);
 }
 
 .page-wrapper {

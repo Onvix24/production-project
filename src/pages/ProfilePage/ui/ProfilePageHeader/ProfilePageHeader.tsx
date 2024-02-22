@@ -3,7 +3,7 @@ import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { useCallback } from "react";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { 
-	getProfileData,
+	getProfileData,	
 	getProfileIsLoading, 
 	getProfileReadonly, profileActions,
 	updateProfileData 

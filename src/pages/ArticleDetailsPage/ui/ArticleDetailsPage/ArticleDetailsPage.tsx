@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { CommentList } from "@/entities/Comment";
 import { useGetCommentsQuery } from "@/shared/api/rtkQueryApi";
 import { AddArticleComments } from "@/features/AddArticleComments";
+import { Page } from "@/shared/ui/Page/Page";
 
 interface ArticleDetailsPageProps {
 	className?: string,
@@ -19,18 +20,18 @@ const ArticleDetailsPage = ({ className } : ArticleDetailsPageProps) => {
 	
 	if (!id) {
 		return (
-			<div>
+			<Page>
 				Стаття не найдена
-			</div>
+			</Page>
 		);
 	}
 
 	return (
-		<div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+		<Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
 			<ArticleDetails articleId={id}/>
 			<AddArticleComments articleId={id} isLoading={isLoading}/>
 			<CommentList comments={data} isLoading={isLoading}/>
-		</div>
+		</Page>
 	);
 };
 

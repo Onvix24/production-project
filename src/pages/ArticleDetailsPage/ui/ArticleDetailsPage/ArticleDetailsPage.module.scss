@@ -1,6 +1,10 @@
 .ArticleDetailsPage {
     display: flex;
     flex-direction: column;
+
+    padding: rem(10);
+
+    background-color: $primaryBgColor;
     gap: rem(20);
 
     &__commentsTitle {

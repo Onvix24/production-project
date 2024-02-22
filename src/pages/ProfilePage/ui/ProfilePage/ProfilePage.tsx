@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import { ProfilePageHeader } from "../ProfilePageHeader/ProfilePageHeader";
 import { EditableProfileCard } from "@/features/EditableProfileCard";
 import { useParams } from "react-router-dom";
+import { Page } from "@/shared/ui/Page/Page";
 
 const reducers: ReducersList = {
 	profile: profileReducer
@@ -39,13 +40,13 @@ const ProfilePage = ({ className } : ProfilePageProps) => {
 
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-			<div className={classNames(cls.ProfilePage, {}, [className])}>
+			<Page className={classNames(cls.ProfilePage, {}, [className])}>
 				<ProfilePageHeader/>
 				{validateErrors?.length && validateErrors.map(error => (
 					<div key={error}>{error}</div>
 				))}
 				<EditableProfileCard/>
-			</div>
+			</Page>
 		</DynamicModuleLoader>
 	);
 };

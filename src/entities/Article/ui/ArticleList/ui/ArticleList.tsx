@@ -23,13 +23,13 @@ export const ArticleList = memo((props : ArticleListProps) => {
 	
 	const { articles, view = ArticleListView.GRID , className, error, isLoading } = props;
 
-	if (isLoading) {
-		return (
-			<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-				{getSkeletons(view)}
-			</div>
-		);
-	}
+	// if (isLoading) {
+	// 	return (
+	// 		<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+	// 			{getSkeletons(view)}
+	// 		</div>
+	// 	);
+	// }
 
 	const renderArticleItem = (article: Article) => (
 		<ArticleListItem 
@@ -45,6 +45,7 @@ export const ArticleList = memo((props : ArticleListProps) => {
 				? articles.map(renderArticleItem)
 				: error
 			}
+			{isLoading && getSkeletons(view)}
 		</div>
 	);
 });

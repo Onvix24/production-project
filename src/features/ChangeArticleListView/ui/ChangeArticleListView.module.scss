@@ -1,12 +1,22 @@
 .ChangeArticleListView {
     display: flex;
     align-items: center;
+    flex: 0 0;
     justify-content: center;
 
     max-width: rem(100);
+    height: max-content;
+    gap: rem(10);
 
     padding: rem(10);
 
     border-radius: rem(32);
-    background-color: $thirdBgColor;
+    background-color: $primaryBgColor;
+
+    &__icon {
+        fill: $thirdBgColor;
+        &_selected {
+            fill: $iconColor;
+        }
+    }
 }
