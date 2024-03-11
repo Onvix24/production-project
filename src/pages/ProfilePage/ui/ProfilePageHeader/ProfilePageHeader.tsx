@@ -32,11 +32,7 @@ export const ProfilePageHeader = ({ className } : ProfilePageHeaderProps) => {
 
 	const readOnly = useSelector(getProfileReadonly);
 	const data = useSelector(getProfileData);
-
-	console.log("1", authData?.id, typeof authData?.id);
-	console.log("2", profileData?.id, typeof profileData?.id);
-	console.log(canEdit);
-
+	
 	const onStartEditClickHandler = useCallback(() => {
 		dispatch(profileActions.readonly(false));
 	}, [dispatch]);

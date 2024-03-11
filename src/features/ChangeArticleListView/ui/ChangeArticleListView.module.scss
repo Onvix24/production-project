@@ -11,10 +11,10 @@
     padding: rem(10);
 
     border-radius: rem(32);
-    background-color: $primaryBgColor;
+    background-color: $thirdBgColor;
 
     &__icon {
-        fill: $thirdBgColor;
+        fill: $hintColor;
         &_selected {
             fill: $iconColor;
         }

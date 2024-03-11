@@ -1,4 +1,21 @@
 .ArticlesPage {
     // display: flex;
-    gap: rem(30);
+    // align-items: center;
+    // gap: rem(30);
+    // flex-direction: column;
+    // justify-content: center;
+    &__button {
+        display: block;
+
+        margin: rem(20) auto 0 auto;
+        padding: rem(6);
+
+        cursor: pointer;
+    }
+
+    &__contentWrapper {
+        display: flex;
+        justify-content: center;
+        gap: rem(30);
+    }
 }

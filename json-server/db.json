@@ -132,7 +132,7 @@
     {
       "id": "4",
       "userId": "1",
-      "title": "JS news 2",
+      "title": "JS news 4",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
       "views": 2424,
@@ -155,7 +155,7 @@
     {
       "id": "5",
       "userId": "1",
-      "title": "JS news 3",
+      "title": "JS news 5",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
       "views": 2424,
@@ -178,7 +178,7 @@
     {
       "id": "6",
       "userId": "1",
-      "title": "JS news 2",
+      "title": "JS news 6",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
       "views": 2424,
@@ -201,7 +201,7 @@
     {
       "id": "7",
       "userId": "1",
-      "title": "JS news 3",
+      "title": "JS news 7",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
       "views": 2424,
@@ -224,7 +224,7 @@
     {
       "id": "8",
       "userId": "1",
-      "title": "JS news 2",
+      "title": "JS news 8",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
       "views": 2424,
@@ -247,7 +247,7 @@
     {
       "id": "9",
       "userId": "1",
-      "title": "JS news 3",
+      "title": "JS news 9",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
       "views": 2424,
@@ -270,7 +270,30 @@
     {
       "id": "10",
       "userId": "1",
-      "title": "JS news 2",
+      "title": "JS news 10",
+      "subtitle": "Що нового в JS за 2023 рік?",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
+      "views": 2424,
+      "createdAt": "24.02.2023",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "11",
+          "type": "TEXT",
+          "title": "Заголовок цього блока",
+          "paragraphs": [
+            "Програма, яку за традицією називають «Hello, world!», дуже проста. Вона виводить куди-небудь фразу «Hello, world!», або іншу подібну, засобами некоєї мови.",
+            "JavaScript — це мова, програми на якій можна виконувати в різних середовищах. У нашому випадку йдеться про браузери і серверну платформу Node.js. Якщо до цього часу ви не написали жодного рядка коду на JS і читаєте цей текст в браузері, на настільному комп'ютері, це означає, що ви буквально за кілька секунд від своєї першої JavaScript-програми."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "userId": "1",
+      "title": "JS news 11",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
       "views": 2424,
@@ -293,7 +316,7 @@
     {
       "id": "12",
       "userId": "1",
-      "title": "JS news 3",
+      "title": "JS news 12",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
       "views": 2424,
@@ -316,7 +339,7 @@
     {
       "id": "13",
       "userId": "1",
-      "title": "JS news 2",
+      "title": "JS news 13",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
       "views": 2424,
@@ -339,7 +362,7 @@
     {
       "id": "14",
       "userId": "1",
-      "title": "JS news 3",
+      "title": "JS news 14",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
       "views": 2424,
@@ -362,7 +385,7 @@
     {
       "id": "15",
       "userId": "1",
-      "title": "JS news 2",
+      "title": "JS news 15",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
       "views": 2424,
@@ -385,7 +408,7 @@
     {
       "id": "16",
       "userId": "1",
-      "title": "JS news 3",
+      "title": "JS news 16",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
       "views": 2424,
@@ -408,7 +431,7 @@
     {
       "id": "17",
       "userId": "1",
-      "title": "JS news 2",
+      "title": "JS news 17",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
       "views": 2424,
@@ -431,7 +454,7 @@
     {
       "id": "18",
       "userId": "1",
-      "title": "JS news 3",
+      "title": "JS news 18",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
       "views": 2424,

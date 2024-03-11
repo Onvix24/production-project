@@ -18,66 +18,75 @@ import {
 import { ChangeArticleListView } from "@/features/ChangeArticleListView";
 import { Page } from "@/shared/ui/Page/Page";
 import { fetchLoadArticles } from "../../model/services/fetchLoadArticles/fetchLoadArticles";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 
 interface ArticlesPageProps {
-	className?: string
+    className?: string;
 }
 
 const reducers: ReducersList = {
-	articlesPage: articlesPageReducer
+	articlesPage: articlesPageReducer,
 };
 
-const ArticlesPage = ({ className } : ArticlesPageProps) => {
-
+const ArticlesPage = ({ className }: ArticlesPageProps) => {
 	const dispatch = useAppDispatch();
-	
 	const articles = useSelector(getArticles.selectAll);
 	const isLoading = useSelector(getArticlesPageIsLoading);
 	const error = useSelector(getArticlesPageError);
 	const view = useSelector(getArticlesPageView);
-	
 	const hasMore = useSelector(getArticlesPageHasMore);
 	const page = useSelector(getArticlesPageNum);
-	
+
 	const onChangeView = useCallback(
 		(view: ArticleListView) => {
 			dispatch(articlesPageActions.setView(view));
-		}, [dispatch],
+		},
+		[dispatch]
 	);
-		
+
+	const onLoadArticle = useCallback(() => {
+		dispatch(fetchLoadArticles());
+	}, [dispatch]);
+
 	// const onLoadArticle = useCallback(
 	// 	() => {
-	// 		dispatch(fetchLoadArticles());
-	// 	}, [dispatch]
+	// 		if(hasMore && !isLoading) {
+	// 			dispatch(articlesPageActions.setPage(page + 1));
+	// 			dispatch(fetchArticlesList({ page: page + 1 })); //!проблем з асинк санком
+	// 		}
+	// 	}, [dispatch, hasMore, isLoading, page]
 	// );
 
-	const onLoadArticle = useCallback(
-		() => {
-			if(hasMore && !isLoading) {
-				dispatch(articlesPageActions.setPage(page + 1));
-				dispatch(fetchArticlesList({ page: page + 1 }));
-			}
-		}, [dispatch, hasMore, isLoading, page]
-	);
-		
 	useEffect(() => {
 		dispatch(articlesPageActions.initView());
+
 		dispatch(fetchArticlesList({ page: 1 }));
 	}, [dispatch]);
 
 	return (
-		<DynamicModuleLoader reducers={reducers} >
-			<Page onScrollEnd={onLoadArticle} className={classNames(cls.ArticlesPage, {}, [className])}>
-				<ChangeArticleListView  view={view} onViewClick={onChangeView}/>	
-				<ArticleList
-					isLoading={isLoading}
-					view={view}
-					articles={articles}
-					error={error}
-				/>
+		<DynamicModuleLoader reducers={reducers}>
+			<Page
+				onScrollEnd={onLoadArticle}
+				className={classNames(cls.ArticlesPage, {}, [className])}
+			>
+				<div className={cls.ArticlesPage__contentWrapper}>
+					<ChangeArticleListView view={view} onViewClick={onChangeView} />
+					<ArticleList
+						isLoading={isLoading}
+						view={view}
+						articles={articles}
+						error={error}
+					/>
+				</div>
+				<Button
+					className={cls.ArticlesPage__button}
+					theme={ButtonTheme.OUTLINE}
+					onClick={onLoadArticle}
+				>
+                    Load more
+				</Button>
 			</Page>
 		</DynamicModuleLoader>
-		
 	);
 };
 
