@@ -23,7 +23,8 @@ const articlesPageSlice = createSlice({
 		view: ArticleListView.GRID,
 		page: 1,
 		limit: 3,
-		hasMore: true
+		hasMore: true,
+		_inited: false
 	}),
 	reducers: {
 		setView: (state, action: PayloadAction<ArticleListView>) => {
@@ -37,6 +38,7 @@ const articlesPageSlice = createSlice({
 			const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleListView;
 			state.view = view;
 			state.limit = view === ArticleListView.COLUMN ? 4 : 9;
+			state._inited = true;
 		}
 	},
 	extraReducers: (builder) => {

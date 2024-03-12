@@ -7,7 +7,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
 	let combinedReducer = combineReducers(reducers);
 
 	let keysToRemove : Array<StateSchemaKey> = [];
-
+	
 	return {
 		getReducerMap: () => reducers,
 		reduce: (state: StateSchema, action: AnyAction) => {

@@ -6,7 +6,6 @@ import { ProfileSchema } from "@/entities/Profile";
 import { UserSchema } from "@/entities/User";
 import { LoginSchema } from "@/features/AuthByUsername";
 import { ArticlesPageSchema } from "@/pages/ArticlesPage";
-import { NavigateOptions, To } from "react-router-dom";
 import { rtkQueryApi } from "@/shared/api/rtkQueryApi";
 
 export interface StateSchema {
@@ -32,7 +31,6 @@ export interface ReducerManager {
 
 export interface ThunkExtraArguments {
     api: AxiosInstance,
-    navigate?: (to: To, options?: NavigateOptions) => void,
 
 }
 
