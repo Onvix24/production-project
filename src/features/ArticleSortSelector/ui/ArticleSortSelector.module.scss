@@ -1,0 +1,14 @@
+.ArticleSortSelector {
+    display: flex;
+    flex-direction: column;
+
+    padding: rem(8) rem(16);
+
+    row-gap: rem(10);
+    &__select {
+        > select {
+            border: none;
+            background-color: $thirdBgColor;
+        }
+    }
+}

@@ -1,6 +1,6 @@
 import cls from "./ArticleListItem.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { memo, useCallback } from "react";
+import { HTMLAttributeAnchorTarget, memo, useCallback } from "react";
 import { Article, ArticleBlockType, ArticleListView, ArticleTextBlock } from "../../../model/types/Article";
 import { Icon } from "@/shared/ui/Icon/Icon";
 import WatcherIcon from "@/shared/assets/icons/Article/eye.svg";
@@ -10,20 +10,22 @@ import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { ArticleTextBlockComponent } from "../../ArticleTextBlockComponent";
 import { useNavigate } from "react-router-dom";
+import { AppLink } from "@/shared/ui/AppLink/AppLink";
 
 interface ArticleListItemProps {
 	className?: string,
 	article: Article,
-	view: ArticleListView
+	view: ArticleListView,
+	target?: HTMLAttributeAnchorTarget;
 }
 
-export const ArticleListItem = memo(({ className, article, view } : ArticleListItemProps) => {
+export const ArticleListItem = memo(({ className, article, view, target } : ArticleListItemProps) => {
 	 
-	const navigate = useNavigate(); 
+	// const navigate = useNavigate(); 
 
-	const onOpenArticle = useCallback(() => {
-		navigate(RoutePath.article_details + article.id);
-	}, [article.id, navigate]);
+	// const onOpenArticle = useCallback(() => {
+	// 	navigate(RoutePath.article_details + article.id);
+	// }, [article.id, navigate]);
 
 	if(view === ArticleListView.COLUMN) {
 	
@@ -47,13 +49,18 @@ export const ArticleListItem = memo(({ className, article, view } : ArticleListI
 							<ArticleTextBlockComponent block={textBlock}/>
 						)}
 						<div className={cls.ArticleListItem__details}>
-							<Button 
-								className={cls.ArticleListItem__readMore}
-								theme={ButtonTheme.OUTLINE}
-								onClick={onOpenArticle}
+							<AppLink 
+								to={RoutePath.article_details + article.id} 
+								target={target}
 							>
-								Читати далі...
-							</Button>
+								<Button 
+									className={cls.ArticleListItem__readMore}
+									theme={ButtonTheme.OUTLINE}
+									// onClick={onOpenArticle}
+								>
+									Читати далі...
+								</Button>
+							</AppLink>
 							<div className={cls.ArticleListItem__wathers}>
 								<Icon className={cls.ArticleListItem__icon} Svg={WatcherIcon}/>
 								<span className={cls.ArticleListItem__views}>{article.views}</span>
@@ -66,8 +73,14 @@ export const ArticleListItem = memo(({ className, article, view } : ArticleListI
 	}
 
 	return (
-		<div className={classNames(cls.ArticleListItem, {}, [className, cls.ArticleListItem_grid, cls[view]])}>
-			<Card onClick={onOpenArticle}>
+		<AppLink
+			className={classNames(cls.ArticleListItem, {}, [className, cls.ArticleListItem_grid, cls[view]])} 
+			to={RoutePath.article_details + article.id} 
+			target={target}
+		>
+			<Card 
+				// onClick={onOpenArticle}
+			>
 				<img className={cls.ArticleListItem__image} src={article.img} alt={article.title} />
 				<div className={cls.ArticleListItem__contentWrapper}>
 					<h3 className={cls.ArticleListItem__title}>
@@ -86,6 +99,6 @@ export const ArticleListItem = memo(({ className, article, view } : ArticleListI
 					</div>
 				</div>
 			</Card>
-		</div>
+		</AppLink>
 	);
 });

@@ -6,20 +6,20 @@ import { ArticleListView } from "@/entities/Article/model/types/Article";
 import { DynamicModuleLoader, ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { articlesPageActions, articlesPageReducer, getArticles } from "../../model/slices/articlesPageSlice";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
 import { useSelector } from "react-redux";
 import { 
 	getArticlesPageError,
 	getArticlesPageHasMore,
-	getArticlesPageInited,
 	getArticlesPageIsLoading,
-	getArticlesPageNum,
 	getArticlesPageView 
 } from "../../model/selectors/ArticlePageSelectors";
 import { ChangeArticleListView } from "@/features/ChangeArticleListView";
 import { Page } from "@/shared/ui/Page/Page";
 import { fetchLoadArticles } from "../../model/services/fetchLoadArticles/fetchLoadArticles";
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { ArticlesPageFilters } from "../ArticlesPageFilters";
+import { useSearchParams } from "react-router-dom";
+import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 
 interface ArticlesPageProps {
     className?: string;
@@ -35,9 +35,9 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 	const isLoading = useSelector(getArticlesPageIsLoading);
 	const error = useSelector(getArticlesPageError);
 	const view = useSelector(getArticlesPageView);
-	//const hasMore = useSelector(getArticlesPageHasMore);
-	//const page = useSelector(getArticlesPageNum);
-	const inited = useSelector(getArticlesPageInited);
+	const hasMore = useSelector(getArticlesPageHasMore);
+	
+	const [searchParams] = useSearchParams();
 
 	const onChangeView = useCallback(
 		(view: ArticleListView) => {
@@ -50,22 +50,10 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 		dispatch(fetchLoadArticles());
 	}, [dispatch]);
 
-	// const onLoadArticle = useCallback(
-	// 	() => {
-	// 		if(hasMore && !isLoading) {
-	// 			dispatch(articlesPageActions.setPage(page + 1));
-	// 			dispatch(fetchArticlesList({ page: page + 1 })); //!проблем з асинк санком
-	// 		}
-	// 	}, [dispatch, hasMore, isLoading, page]
-	// );
-
 	useEffect(() => {
-		if (!inited) {
-			dispatch(articlesPageActions.initView());
-			dispatch(fetchArticlesList({ page: 1 }));
-		}
-	}, [dispatch, inited]);
-
+		dispatch(initArticlesPage(searchParams));
+	}, [dispatch, searchParams]);
+	
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
 			<Page
@@ -80,11 +68,13 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 						articles={articles}
 						error={error}
 					/>
+					<ArticlesPageFilters className={cls.ArticlesPage__filters} />
 				</div>
 				<Button
 					className={cls.ArticlesPage__button}
 					theme={ButtonTheme.OUTLINE}
 					onClick={onLoadArticle}
+					disabled={!hasMore}
 				>
                     Load more
 				</Button>

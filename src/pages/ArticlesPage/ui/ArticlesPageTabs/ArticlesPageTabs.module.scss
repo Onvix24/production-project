@@ -1,0 +1,10 @@
+.ArticlesPageTabs {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(15);
+
+    &__item {
+        width: max-content;
+        padding: rem(8) rem(16);
+    }
+}

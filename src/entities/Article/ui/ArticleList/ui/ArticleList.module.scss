@@ -1,5 +1,9 @@
 .ArticleList {
+    flex-grow: 1;
+
     max-width: rem(780);
+
+    border-radius: rem(32);
 }
 
 .GRID {

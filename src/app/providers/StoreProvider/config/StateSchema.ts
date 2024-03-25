@@ -7,6 +7,7 @@ import { UserSchema } from "@/entities/User";
 import { LoginSchema } from "@/features/AuthByUsername";
 import { ArticlesPageSchema } from "@/pages/ArticlesPage";
 import { rtkQueryApi } from "@/shared/api/rtkQueryApi";
+import { ArticleDetailsPageRecomendationsSchema } from "@/pages/ArticleDetailsPage";
 
 export interface StateSchema {
     counter: counterSchema;
@@ -16,7 +17,9 @@ export interface StateSchema {
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
-    articlesPage?: ArticlesPageSchema
+    articlesPage?: ArticlesPageSchema;
+    articleDetailsPage?: ArticleDetailsPageRecomendationsSchema;
+    articleDetailsRecommendations: ArticleDetailsPageRecomendationsSchema;
     [rtkQueryApi.reducerPath]: ReturnType<typeof rtkQueryApi.reducer>
 }
 

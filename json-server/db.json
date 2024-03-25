@@ -18,10 +18,10 @@
       "title": "JS news 1",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 2424,
+      "views": 23,
       "createdAt": "24.02.2023",
       "type": [
-        "IT"
+        "IT, ECONOMYCS"
       ],
       "blocks": [
         {
@@ -89,7 +89,7 @@
       "title": "JS news 2",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 2424,
+      "views": 8,
       "createdAt": "24.02.2023",
       "type": [
         "IT"
@@ -112,10 +112,10 @@
       "title": "JS news 3",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 2424,
+      "views": 9753,
       "createdAt": "24.02.2023",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -135,10 +135,10 @@
       "title": "JS news 4",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 2424,
+      "views": 22467,
       "createdAt": "24.02.2023",
       "type": [
-        "IT"
+        "ECONOMYCS"
       ],
       "blocks": [
         {
@@ -158,7 +158,7 @@
       "title": "JS news 5",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 2424,
+      "views": 7424,
       "createdAt": "24.02.2023",
       "type": [
         "IT"
@@ -181,7 +181,7 @@
       "title": "JS news 6",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 2424,
+      "views": 294,
       "createdAt": "24.02.2023",
       "type": [
         "IT"
@@ -204,10 +204,10 @@
       "title": "JS news 7",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 2424,
+      "views": 8,
       "createdAt": "24.02.2023",
       "type": [
-        "IT"
+        "IT, ECONOMYCS, SCIENCE"
       ],
       "blocks": [
         {
@@ -227,7 +227,7 @@
       "title": "JS news 8",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 2424,
+      "views": 4,
       "createdAt": "24.02.2023",
       "type": [
         "IT"
@@ -247,10 +247,10 @@
     {
       "id": "9",
       "userId": "1",
-      "title": "JS news 9",
+      "title": "Rust News",
       "subtitle": "Що нового в JS за 2023 рік?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 2424,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rust_programming_language_black_logo.svg/1200px-Rust_programming_language_black_logo.svg.png",
+      "views": 124,
       "createdAt": "24.02.2023",
       "type": [
         "IT"
@@ -299,7 +299,7 @@
       "views": 2424,
       "createdAt": "24.02.2023",
       "type": [
-        "IT"
+        "IT, SCIENCE"
       ],
       "blocks": [
         {
@@ -319,7 +319,7 @@
       "title": "JS news 12",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 2424,
+      "views": 234,
       "createdAt": "24.02.2023",
       "type": [
         "IT"
@@ -339,10 +339,10 @@
     {
       "id": "13",
       "userId": "1",
-      "title": "JS news 13",
+      "title": "Python News 13",
       "subtitle": "Що нового в JS за 2023 рік?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 2424,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/800px-Python-logo-notext.svg.png",
+      "views": 1941,
       "createdAt": "24.02.2023",
       "type": [
         "IT"
@@ -365,7 +365,7 @@
       "title": "JS news 14",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 2424,
+      "views": 224,
       "createdAt": "24.02.2023",
       "type": [
         "IT"
@@ -388,7 +388,7 @@
       "title": "JS news 15",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 2424,
+      "views": 38,
       "createdAt": "24.02.2023",
       "type": [
         "IT"
@@ -411,7 +411,7 @@
       "title": "JS news 16",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 2424,
+      "views": 778,
       "createdAt": "24.02.2023",
       "type": [
         "IT"
@@ -457,7 +457,7 @@
       "title": "JS news 18",
       "subtitle": "Що нового в JS за 2023 рік?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 2424,
+      "views": 189,
       "createdAt": "24.02.2023",
       "type": [
         "IT"

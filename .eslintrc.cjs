@@ -60,7 +60,7 @@ module.exports = {
 			  "component": true,
 			  "html": false
 			}
-		  ]
+		  ],
 	},
 	globals: {
 		__IS_DEV__: true,

@@ -35,6 +35,9 @@ dependencies:
   react-router-dom:
     specifier: ^6.22.2
     version: 6.22.2(react-dom@18.2.0)(react@18.2.0)
+  usehooks-ts:
+    specifier: ^3.0.2
+    version: 3.0.2(react@18.2.0)
 
 devDependencies:
   '@babel/core':
@@ -10740,7 +10743,6 @@ packages:
 
   /lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
-    dev: true
 
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
@@ -14279,6 +14281,16 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
+      react: 18.2.0
+    dev: false
+
+  /usehooks-ts@3.0.2(react@18.2.0):
+    resolution: {integrity: sha512-qJScCj8YOxa8RV3Iz2T+2IsydLG0EID5FouTGE7aNFEpFlCXmRrnJiPCESDArKr1FLTaUQSfDQ43UDn7yMLExw==}
+    engines: {node: '>=16.15.0'}
+    peerDependencies:
+      react: ^16.8.0  || ^17 || ^18
+    dependencies:
+      lodash.debounce: 4.0.8
       react: 18.2.0
     dev: false
 

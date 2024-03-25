@@ -1,10 +1,10 @@
 .Input {
     display: flex;
+
     align-items: center;
 
-    gap: 8px;
-
     font: var(--font-m);
+    gap: 8px;
 
     ::placeholder {
         color: #adbcc0;

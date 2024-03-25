@@ -2,10 +2,10 @@
     flex-grow: 1;
 
     padding: 20px;
+
+    &__triggerRef {
+        height: 2px;
+        margin: rem(10);
+
+    } 
 }
-
-// .triggerRef {
-//     height: 1px;
-
-//     background-color: red;
-// } 

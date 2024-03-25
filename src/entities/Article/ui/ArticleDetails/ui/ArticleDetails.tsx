@@ -21,6 +21,9 @@ import { ArticleBlock } from "@/entities/Article/model/types/Article";
 import { ArticleTextBlockComponent } from "../../ArticleTextBlockComponent";
 import { ArticleImageBlockComponent } from "../../ArticleImageBlock";
 import { ArticleCodeBlockComponent } from "../../ArticleCodeBlockComponent";
+import {
+	 articleDetailsPageRecommendationsReducer 
+} from "@/pages/ArticleDetailsPage/model/slice/articleDetailsPageRecomendationsSlice";
 
 
 interface ArticleDetailsProps {
@@ -28,9 +31,10 @@ interface ArticleDetailsProps {
 	articleId: string;
 }
 
-const redusers: ReducersList = {
-	articleDetails: articleDetailsReducer
-};
+// const redusers: ReducersList = {
+// 	articleDetails: articleDetailsReducer,
+// 	articleDetailsRecommendations: articleDetailsPageRecommendationsReducer  
+// };
 
 export const ArticleDetails = memo(({ className, articleId } : ArticleDetailsProps) => {
 	
@@ -120,11 +124,11 @@ export const ArticleDetails = memo(({ className, articleId } : ArticleDetailsPro
 	);
 	
 	return (
-		<DynamicModuleLoader reducers={redusers} removeAfterUnmount>
-			<div className={classNames(cls.ArticleDetails, {}, [className])}>
-				{content}
-				{data?.blocks.map(renderBlock)}
-			</div>
-		</DynamicModuleLoader>
+		// <DynamicModuleLoader reducers={redusers} removeAfterUnmount>
+		<div className={classNames(cls.ArticleDetails, {}, [className])}>
+			{content}
+			{data?.blocks.map(renderBlock)}
+		</div>
+		// </DynamicModuleLoader>
 	);
 });

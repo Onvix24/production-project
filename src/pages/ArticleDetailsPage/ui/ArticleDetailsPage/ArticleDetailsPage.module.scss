@@ -1,18 +1,27 @@
 .ArticleDetailsPage {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
+    align-items: start;
 
     max-width: max-content;
 
-    margin:  0 auto;
-    padding: rem(10);
+    margin: 0 auto;
 
-    border-radius: rem(12);
-
-    background-color: $primaryBgColor;
     gap: rem(20);
 
     &__commentsTitle {
         margin-top: rem(20);
+    }
+
+    &__button {
+        padding: 10px;
+    }
+
+    &__content {
+        padding: rem(10);
+
+        border-radius: rem(12);
+
+        background-color: $primaryBgColor;
     }
 }
