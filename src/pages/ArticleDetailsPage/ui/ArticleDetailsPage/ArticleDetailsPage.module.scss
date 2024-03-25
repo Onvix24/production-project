@@ -9,12 +9,15 @@
 
     gap: rem(20);
 
+    &__header {
+        // order: 2
+    }
+
     &__commentsTitle {
         margin-top: rem(20);
     }
 
     &__button {
-        padding: 10px;
     }
 
     &__content {

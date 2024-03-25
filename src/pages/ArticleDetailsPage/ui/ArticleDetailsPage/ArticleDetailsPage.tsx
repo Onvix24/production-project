@@ -23,6 +23,7 @@ import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { 
 	fetchArticleRecommendations
 } from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
+import { ArticleDetailsPageHeader } from "./ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
 interface ArticleDetailsPageProps {
 	className?: string,
@@ -40,21 +41,12 @@ const ArticleDetailsPage = ({ className } : ArticleDetailsPageProps) => {
 	const { id } = useParams<{id: string}>();
 	const { data, isLoading } = useGetCommentsQuery(Number(id));
 	const recommendationsArticles = useSelector(getArticleRecommendations.selectAll);
-	console.log(recommendationsArticles);
 	const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
-	console.log(recommendationsIsLoading);
 	
-	const navigate = useNavigate();
-
 	useEffect(() => {
 		dispatch(fetchArticleRecommendations());
 	}, [dispatch]);
-	
-
-	const onBackToList = useCallback(() => {
-		navigate(RoutePath.articles);
-	}, [navigate]);
-	
+		
 	if (!id) {
 		return (
 			<Page>
@@ -66,13 +58,7 @@ const ArticleDetailsPage = ({ className } : ArticleDetailsPageProps) => {
 	return (
 		<DynamicModuleLoader reducers={redusers} removeAfterUnmount>
 			<Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-				<Button 
-					className={cls.ArticleDetailsPage__button}
-					theme={ButtonTheme.OUTLINE}
-					onClick={onBackToList}
-				>
-				Back to list
-				</Button>
+				<ArticleDetailsPageHeader className={cls.ArticleDetailsPage__header} />
 				<div className={cls.ArticleDetailsPage__content}>
 					<ArticleDetails articleId={id}/>
 					<div className={cls.ArticleDetailsPage__recommendations}>Рекомендуємі статті</div>

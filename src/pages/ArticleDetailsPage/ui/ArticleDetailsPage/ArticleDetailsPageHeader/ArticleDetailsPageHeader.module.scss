@@ -1,0 +1,9 @@
+.ArticleDetailsPageHeader {
+    display: flex;
+
+    flex-direction: column;
+    row-gap: rem(20);
+    &__button {
+        padding: rem(10);
+    }
+}

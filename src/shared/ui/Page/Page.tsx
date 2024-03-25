@@ -14,11 +14,11 @@ export const Page = memo(({ className, children, onScrollEnd } : PageProps) => {
 	const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
 	const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
 
-	useInfiniteScroll({
-		triggerRef,
-		wrapperRef,
-		callback: onScrollEnd
-	});
+	// useInfiniteScroll({
+	// 	triggerRef,
+	// 	wrapperRef,
+	// 	callback: onScrollEnd
+	// });
 
 	return (
 		<section 
@@ -26,10 +26,10 @@ export const Page = memo(({ className, children, onScrollEnd } : PageProps) => {
 			className={classNames(cls.Page, {}, [className])} 
 		>
 			{children}
-			<div 
+			{/* <div 
 				className={cls.Page__triggerRef} 
 				ref={triggerRef}
-			/>
+			/> */}
 		</section>
 	);
 });

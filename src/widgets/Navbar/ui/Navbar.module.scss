@@ -1,4 +1,4 @@
-.navbar {
+.Navbar {
 	display: flex;
 	align-items: center;
 
@@ -6,7 +6,15 @@
 	height: var(--navbar-height);
 	padding: rem(20);
 
+	&__link {
+		margin-left: rem(250);
+		padding: rem(8) rem(16);
+
+		border: rem(1) solid $iconColor;
+		border-radius: rem(12);
+	}
 }
+
 
 .link {
 	margin-left: auto;
