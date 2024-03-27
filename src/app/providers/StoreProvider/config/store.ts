@@ -15,6 +15,7 @@ export function createReduxStore(
 		counter: counterReducer,
 		user: userReducer,
 		[rtkQueryApi.reducerPath]: rtkQueryApi.reducer,
+		
 	};
 
 	const reducerManager = createReducerManager(rootRedusers);

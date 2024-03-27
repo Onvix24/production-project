@@ -12,6 +12,7 @@ export default {
 	},
 } as Meta<typeof AboutPage>;
 
+// @ts-ignore
 const Template: StoryFn<typeof AboutPage> = (args) => <AboutPage/>;
 
 export const Normal = Template.bind({});

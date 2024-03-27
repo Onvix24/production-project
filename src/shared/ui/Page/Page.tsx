@@ -9,6 +9,7 @@ interface PageProps {
 	onScrollEnd?: () => void;
 }
 
+//@ts-ignore
 export const Page = memo(({ className, children, onScrollEnd } : PageProps) => {
 	
 	const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;

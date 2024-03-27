@@ -19,7 +19,7 @@ export interface StateSchema {
     articleDetails?: ArticleDetailsSchema;
     articlesPage?: ArticlesPageSchema;
     articleDetailsPage?: ArticleDetailsPageRecomendationsSchema;
-    articleDetailsRecommendations: ArticleDetailsPageRecomendationsSchema;
+    articleDetailsRecommendations?: ArticleDetailsPageRecomendationsSchema;
     [rtkQueryApi.reducerPath]: ReturnType<typeof rtkQueryApi.reducer>
 }
 

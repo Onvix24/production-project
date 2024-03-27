@@ -79,7 +79,7 @@ export const EditableProfileCard = ({ className } : EditableProfileCardProps) =>
 	
 	return (
 		<ProfileCard
-			className={classNames(cls.EditableProfileCard, {}, [])}
+			className={classNames(cls.EditableProfileCard, {}, [className])}
 			data={formData}
 			readOnly={readOnly}
 			isLoading={isLoading}

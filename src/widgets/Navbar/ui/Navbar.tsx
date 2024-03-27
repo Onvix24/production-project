@@ -32,7 +32,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 	if(authData) {
 		return (
 			<div className={classNames(cls.Navbar, {}, [className])}>
-				<AppLink to={RoutePath.article_create} className={cls.Navbar__link}>Створити статтю</AppLink>
+				{/* <AppLink to={RoutePath.article_create} className={cls.Navbar__link}>Створити статтю</AppLink> */}
 				<Button
 					theme={ButtonTheme.OUTLINE}
 					className={cls.link}

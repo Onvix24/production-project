@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "app/providers/ThemeProvider";
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/app/providers/ThemeProvider";
 import MainPage from "./MainPage";
 
 export default {
@@ -12,7 +12,7 @@ export default {
 	},
 } as Meta<typeof MainPage>;
 
-const Template: StoryFn<typeof MainPage> = (args) => <MainPage/>;
+const Template: StoryFn<typeof MainPage> = () => <MainPage/>;
 
 export const Normal = Template.bind({});
 Normal.args = {};
