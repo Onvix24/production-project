@@ -1,55 +1,56 @@
+// eslint-disable-next-line @conarti/feature-sliced/layers-slices
 import { User } from "@/entities/User";
 
 export enum ArticleBlockType {
-    CODE = "CODE",
-    IMAGE = "IMAGE",
-    TEXT = "TEXT",
+	CODE = "CODE",
+	IMAGE = "IMAGE",
+	TEXT = "TEXT",
 }
 
 export enum ArticleListView {
-    GRID = "GRID",
-    COLUMN = "COLUMN"
+	GRID = "GRID",
+	COLUMN = "COLUMN",
 }
 
 export interface ArticleBlockBase {
-    id: string;
-    type: ArticleBlockType;
+	id: string;
+	type: ArticleBlockType;
 }
 
 export interface ArticleCodeBlock extends ArticleBlockBase {
-    type: ArticleBlockType.CODE;
-    code: string;
+	type: ArticleBlockType.CODE;
+	code: string;
 }
 
 export interface ArticleImageBlock extends ArticleBlockBase {
-    type: ArticleBlockType.IMAGE;
-    src: string,
-    title: string,
+	type: ArticleBlockType.IMAGE;
+	src: string,
+	title: string,
 }
 
 export interface ArticleTextBlock extends ArticleBlockBase {
-    type: ArticleBlockType.TEXT;
-    title?: string;
-    paragraphs: string[];
+	type: ArticleBlockType.TEXT;
+	title?: string;
+	paragraphs: string[];
 }
 
 export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock;
 
 export enum ArticleType {
-    ALL = "ALL",
-    IT = "IT",
-    SCIENCE = "SCIENCE",
-    ECONOMYCS = "ECONOMYCS",
+	ALL = "ALL",
+	IT = "IT",
+	SCIENCE = "SCIENCE",
+	ECONOMYCS = "ECONOMYCS",
 }
 
 export interface Article {
-    id: string;
-    user: User;
-    title: string;
-    subtitle: string;
-    img: string;
-    views: number;
-    createdAt: string;
-    type: ArticleType[];
-    blocks: ArticleBlock[];
+	id: string;
+	user: User;
+	title: string;
+	subtitle: string;
+	img: string;
+	views: number;
+	createdAt: string;
+	type: ArticleType[];
+	blocks: ArticleBlock[];
 }

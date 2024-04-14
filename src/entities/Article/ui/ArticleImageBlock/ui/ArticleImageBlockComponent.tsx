@@ -1,6 +1,6 @@
-import { ArticleImageBlock } from "@/entities/Article/model/types/Article";
-import cls from "./ArticleImageBlockComponent.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { ArticleImageBlock } from "../../../model/types/Article";
+import cls from "./ArticleImageBlockComponent.module.scss";
 
 interface ArticleImageBlockProps {
 	className?: string;
@@ -8,10 +8,9 @@ interface ArticleImageBlockProps {
 }
 
 export const ArticleImageBlockComponent = ({ className, block } : ArticleImageBlockProps) => {
-
 	return (
 		<div className={classNames(cls.ArticleImageBlockComponent, {}, [className])}>
-			<img className={cls.ArticleImageBlockComponent__img} src={block.src} alt={block.title}/>
+			<img className={cls.ArticleImageBlockComponent__img} src={block.src} alt={block.title} />
 			{block.title && (
 				<div className={cls.ArticleImageBlockComponent__title}>{block.title}</div>
 			)}

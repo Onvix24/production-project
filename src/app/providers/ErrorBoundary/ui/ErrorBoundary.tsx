@@ -1,13 +1,15 @@
-import { Component, ErrorInfo, ReactNode, Suspense } from "react";
+import {
+	Component, ErrorInfo, ReactNode, Suspense,
+} from "react";
 import { ErrorPage } from "@/widgets/ErrorPage";
 // import { withTranslation } from "react-i18next";
 
 interface ErrorBoundryProps {
-  children: ReactNode;
+	children: ReactNode;
 }
 
 interface ErrorBoundryState {
-  hasError: boolean;
+	hasError: boolean;
 }
 class ErrorBoundary extends Component<ErrorBoundryProps, ErrorBoundryState> {
 	constructor(props: ErrorBoundryProps) {
@@ -30,7 +32,7 @@ class ErrorBoundary extends Component<ErrorBoundryProps, ErrorBoundryState> {
 		if (hasError) {
 			return (
 				<Suspense fallback="">
-					<ErrorPage/>
+					<ErrorPage />
 				</Suspense>
 			);
 		}

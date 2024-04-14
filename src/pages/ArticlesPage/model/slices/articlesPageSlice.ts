@@ -1,9 +1,11 @@
 import { createEntityAdapter, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { StateSchema } from "@/app/providers/StoreProvider";
-import { Article, ArticleListView, ArticleType } from "@/entities/Article";
-import { ArticlesPageSchema, ArticlesSortField, OrderSort } from "../types/articlesPageSchema";
-import { fetchArticlesList } from "../services/fetchArticlesList/fetchArticlesList";
+import {
+	Article, ArticleListView, ArticlesSortField, ArticleType, OrderSort,
+} from "@/entities/Article";
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
+import { fetchArticlesList } from "../services/fetchArticlesList/fetchArticlesList";
+import { ArticlesPageSchema } from "../types/articlesPageSchema";
 
 const articlesAdapter = createEntityAdapter<Article>({
 	selectId: (article) => article.id,
@@ -26,7 +28,7 @@ const articlesPageSlice = createSlice({
 		hasMore: true,
 		_inited: false,
 		sort: ArticlesSortField.CREATEDAT,
-		order: OrderSort.ASC,	
+		order: OrderSort.ASC,
 		search: "",
 		type: ArticleType.ALL,
 	}),
@@ -63,19 +65,19 @@ const articlesPageSlice = createSlice({
 				state.error = undefined;
 				state.isLoading = true;
 
-				if(action.meta.arg.replace) {
+				if (action.meta.arg.replace) {
 					articlesAdapter.removeAll(state);
-				}	
+				}
 			})
 			.addCase(fetchArticlesList.fulfilled, (
-				state, 
-				action: PayloadAction<Article[]>
+				state,
+				action: PayloadAction<Article[]>,
 			) => {
 				state.isLoading = false;
 				state.hasMore = action.payload.length > 0;
-			
-				//@ts-ignore
-				if(action.meta.arg.replace) {
+
+				// @ts-ignore
+				if (action.meta.arg.replace) {
 					articlesAdapter.setAll(state, action.payload);
 				} else {
 					articlesAdapter.addMany(state, action.payload);

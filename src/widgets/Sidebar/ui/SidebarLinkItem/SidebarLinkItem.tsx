@@ -1,15 +1,15 @@
-import { useTranslation } from "react-i18next";
-import cls from "./SidebarLinkItem.module.scss";
-import { AppLink } from "@/shared/ui/AppLink/AppLink";
-import { SidebarItemsLinkType } from "../../model/types/sidebarLinksType";
 import { memo } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { getUserAuthData } from "@/entities/User";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { AppLink } from "@/shared/ui/AppLink/AppLink";
+import { SidebarItemsLinkType } from "../../model/types/sidebarLinksType";
+import cls from "./SidebarLinkItem.module.scss";
 
 interface SidebarLinkItemProps {
-    item: SidebarItemsLinkType;
-    collapsed: boolean;
+	item: SidebarItemsLinkType;
+	collapsed: boolean;
 }
 
 export const SidebarLinkItem = memo(({ item, collapsed }: SidebarLinkItemProps) => {
@@ -24,7 +24,7 @@ export const SidebarLinkItem = memo(({ item, collapsed }: SidebarLinkItemProps) 
 	return (
 		<AppLink
 			className={classNames(cls.item, {
-				[cls.collapsed]: collapsed
+				[cls.collapsed]: collapsed,
 			})}
 			to={item.path}
 		>

@@ -7,7 +7,7 @@ export {
 	userReducer,
 	type User,
 	type UserSchema,
-	getUserAuthData
+	getUserAuthData,
 };
 
-export  { getUserMounted } from "./model/selectors/getUserMounted/getUserMounted";
+export { getUserMounted } from "./model/selectors/getUserMounted/getUserMounted";

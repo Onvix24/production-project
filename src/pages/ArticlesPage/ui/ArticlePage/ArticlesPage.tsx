@@ -1,28 +1,27 @@
 import { memo, useCallback, useEffect } from "react";
-import cls from "./ArticlesPage.module.scss";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { ArticleList } from "@/entities/Article";
-import { ArticleListView } from "@/entities/Article/model/types/Article";
-import { DynamicModuleLoader, ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { articlesPageActions, articlesPageReducer, getArticles } from "../../model/slices/articlesPageSlice";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
-import { 
+import { useSearchParams } from "react-router-dom";
+import { ChangeArticleListView } from "@/features/ChangeArticleListView";
+import { ArticleList, ArticleListView } from "@/entities/Article";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { DynamicModuleLoader, ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Page } from "@/shared/ui/Page/Page";
+import {
 	getArticlesPageError,
 	getArticlesPageHasMore,
 	getArticlesPageIsLoading,
-	getArticlesPageView 
+	getArticlesPageView,
 } from "../../model/selectors/ArticlePageSelectors";
-import { ChangeArticleListView } from "@/features/ChangeArticleListView";
-import { Page } from "@/shared/ui/Page/Page";
 import { fetchLoadArticles } from "../../model/services/fetchLoadArticles/fetchLoadArticles";
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
-import { ArticlesPageFilters } from "../ArticlesPageFilters";
-import { useSearchParams } from "react-router-dom";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
+import { articlesPageActions, articlesPageReducer, getArticles } from "../../model/slices/articlesPageSlice";
+import { ArticlesPageFilters } from "../ArticlesPageFilters";
+import cls from "./ArticlesPage.module.scss";
 
 interface ArticlesPageProps {
-    className?: string;
+	className?: string;
 }
 
 const reducers: ReducersList = {
@@ -36,14 +35,14 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 	const error = useSelector(getArticlesPageError);
 	const view = useSelector(getArticlesPageView);
 	const hasMore = useSelector(getArticlesPageHasMore);
-	
+
 	const [searchParams] = useSearchParams();
 
 	const onChangeView = useCallback(
 		(view: ArticleListView) => {
 			dispatch(articlesPageActions.setView(view));
 		},
-		[dispatch]
+		[dispatch],
 	);
 
 	const onLoadArticle = useCallback(() => {
@@ -53,7 +52,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 	useEffect(() => {
 		dispatch(initArticlesPage(searchParams));
 	}, [dispatch, searchParams]);
-	
+
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
 			<Page
@@ -76,7 +75,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 					onClick={onLoadArticle}
 					disabled={!hasMore}
 				>
-                    Load more
+					Load more
 				</Button>
 			</Page>
 		</DynamicModuleLoader>

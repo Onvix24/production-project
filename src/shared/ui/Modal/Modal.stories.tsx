@@ -1,8 +1,7 @@
-import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
-import { Modal } from "@/shared/ui/Modal/Modal";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "@/app/providers/ThemeProvider";
+import { ThemeDecorator } from "../../config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "../../contexts/ThemeContext";
+import { Modal } from "./Modal";
 
 export default {
 	title: "shared/Modal",

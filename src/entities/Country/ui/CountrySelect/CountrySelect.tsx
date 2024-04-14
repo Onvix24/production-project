@@ -1,15 +1,15 @@
-
-import { Select } from "@/shared/ui/Select/Select";
-import cls from "./CountrySelect.module.scss";
-import { classNames } from "@/shared/lib/classNames/classNames";
 import { memo, useCallback } from "react";
-import { Country } from "../../model/types/country";      
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { ListBox } from "@/shared/ui/ListBox";
+import { Select } from "@/shared/ui/Select/Select";
+import { Country } from "../../model/types/country";
+import cls from "./CountrySelect.module.scss";
 
 interface CountrySelectProps {
-    className?: string;
-    value?: Country;
-    onChange?: (value: Country) => void, 
-    readOnly?: boolean;
+	className?: string;
+	value?: Country;
+	onChange?: (value: Country) => void,
+	readOnly?: boolean;
 }
 
 const options = [
@@ -19,26 +19,39 @@ const options = [
 	{ value: Country.JAPAN, content: Country.JAPAN },
 	{ value: Country.POLAND, content: Country.POLAND },
 	{ value: Country.UKRAINE, content: Country.UKRAINE },
-	{ value: Country.USA, content: Country.USA }
+	{ value: Country.USA, content: Country.USA },
 ];
 
-export const CountrySelect = memo(({ className, value, onChange, readOnly } : CountrySelectProps) => {
-        
+export const CountrySelect = memo(({
+	className, value, onChange, readOnly,
+} : CountrySelectProps) => {
 	const onChangeHandler = useCallback(
 		(value: string) => {
 			onChange?.(value as Country);
 		},
 		[onChange],
 	);
-    
+
 	return (
-		<Select 
-			className={classNames(cls.CountrySelect, {}, [className])} 
-			label={"Вкажіть країну"}
-			options={options}
-			value={value}
+		<ListBox
+			// className={classNames(cls.CountrySelect, {}, [className])}
 			onChange={onChangeHandler}
+			value={value}
+			defaultValue="Вкажіть країну"
+			label="Вкажіть країну"
+			items={options}
 			readOnly={readOnly}
-		/>         
+		/>
 	);
+
+	// return (
+	// 	<Select
+	// 		className={classNames(cls.CountrySelect, {}, [className])}
+	// 		label="Вкажіть країну"
+	// 		options={options}
+	// 		value={value}
+	// 		onChange={onChangeHandler}
+	// 		readOnly={readOnly}
+	// 	/>
+	// );
 });

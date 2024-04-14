@@ -1,7 +1,6 @@
-import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "@/app/providers/ThemeProvider";
+import { Theme } from "@/shared/contexts/ThemeContext";
 import ProfilePage from "./ProfilePage";
 
 export default {

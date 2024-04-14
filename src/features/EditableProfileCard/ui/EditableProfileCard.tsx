@@ -1,20 +1,19 @@
-import { Currency } from "@/entities/Currency";
-import { 
-	ProfileCard, getProfileData, getProfileFormData, getProfileIsLoading, getProfileReadonly, profileActions 
-} from "@/entities/Profile";
 import { useCallback } from "react";
 import { useSelector } from "react-redux";
+import { Country } from "@/entities/Country";
+import { Currency } from "@/entities/Currency";
+import {
+	ProfileCard, getProfileData, getProfileFormData, getProfileIsLoading, getProfileReadonly, profileActions,
+} from "@/entities/Profile";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import cls from "./EditableProfileCard.module.scss";
-import { Country } from "@/entities/Country";
 
 interface EditableProfileCardProps {
-    className?: string
+	className?: string
 }
 
 export const EditableProfileCard = ({ className } : EditableProfileCardProps) => {
-
 	const dispatch = useAppDispatch();
 
 	const readOnly = useSelector(getProfileReadonly);
@@ -37,7 +36,7 @@ export const EditableProfileCard = ({ className } : EditableProfileCardProps) =>
 
 	const onAgeChange = useCallback(
 		(value?: string) => {
-			dispatch(profileActions.updateProfile({ age: Number(value ) }));
+			dispatch(profileActions.updateProfile({ age: Number(value) }));
 		},
 		[dispatch],
 	);
@@ -62,7 +61,7 @@ export const EditableProfileCard = ({ className } : EditableProfileCardProps) =>
 		},
 		[dispatch],
 	);
-	
+
 	const onCountryChange = useCallback(
 		(country?: Country) => {
 			dispatch(profileActions.updateProfile({ country }));
@@ -76,7 +75,7 @@ export const EditableProfileCard = ({ className } : EditableProfileCardProps) =>
 		},
 		[dispatch],
 	);
-	
+
 	return (
 		<ProfileCard
 			className={classNames(cls.EditableProfileCard, {}, [className])}
@@ -88,7 +87,7 @@ export const EditableProfileCard = ({ className } : EditableProfileCardProps) =>
 			onCurrencyChange={onCurrencyChange}
 			onFirstnameChange={onFirstnameChange}
 			onLastnameChange={onLastnameChange}
-			onCountryChange={onCountryChange} 
+			onCountryChange={onCountryChange}
 			onCityChange={onCityChange}
 			onUsernameChange={onUsernameChange}
 		/>

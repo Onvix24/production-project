@@ -1,17 +1,14 @@
-/* eslint-disable i18next/no-literal-string */
 import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { LoginModal } from "@/features/AuthByUsername";
+import { getUserAuthData, userActions } from "@/entities/User";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import cls from "./Navbar.module.scss";
-import { LoginModal } from "@/features/AuthByUsername";
-import { useDispatch, useSelector } from "react-redux";
-import { getUserAuthData, userActions } from "../../../entities/User";
-import { AppLink } from "@/shared/ui/AppLink/AppLink";
-import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
 
 interface NavbarProps {
-    className?: string;
+	className?: string;
 }
 
 export const Navbar = memo(({ className }: NavbarProps) => {
@@ -29,7 +26,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 		dispatch(userActions.logout());
 	}, [dispatch]);
 
-	if(authData) {
+	if (authData) {
 		return (
 			<div className={classNames(cls.Navbar, {}, [className])}>
 				{/* <AppLink to={RoutePath.article_create} className={cls.Navbar__link}>Створити статтю</AppLink> */}

@@ -1,5 +1,3 @@
-import { Mods, classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./Modal.module.scss";
 import React, {
 	MutableRefObject,
 	ReactNode,
@@ -8,18 +6,22 @@ import React, {
 	useRef,
 	useState,
 } from "react";
+import { Mods, classNames } from "../../lib/classNames/classNames";
 import { Portal } from "../Portal/Portal";
+import cls from "./Modal.module.scss";
 
 interface ModalProps {
-    className?: string;
-    children?: ReactNode;
-    isOpen?: boolean;
-    onClose: () => void;
+	className?: string;
+	children?: ReactNode;
+	isOpen?: boolean;
+	onClose: () => void;
 	lazy?: boolean;
 }
 
 export const Modal = (props: ModalProps) => {
-	const { className, children, isOpen, onClose, lazy } = props;
+	const {
+		className, children, isOpen, onClose, lazy,
+	} = props;
 
 	const [isClosing, setIsClosing] = useState(false);
 	const [isMounted, setIsMounted] = useState(false);
@@ -40,7 +42,7 @@ export const Modal = (props: ModalProps) => {
 				onCloseHandler();
 			}
 		},
-		[onCloseHandler]
+		[onCloseHandler],
 	);
 
 	useEffect(() => {
@@ -52,12 +54,11 @@ export const Modal = (props: ModalProps) => {
 			window.addEventListener("keydown", onKeyDown);
 			setIsMounted(true);
 		}
-		
+
 		return () => {
 			clearTimeout(timerRef.current);
 			window.removeEventListener("keydown", onKeyDown);
 			setIsClosing(false);
-
 		};
 	}, [isOpen, onKeyDown]);
 
@@ -67,13 +68,13 @@ export const Modal = (props: ModalProps) => {
 
 	const mods: Mods = {
 		[cls.Modal_opened]: isOpen,
-		[cls.Modal_closed]: isClosing
+		[cls.Modal_closed]: isClosing,
 	};
-	
+
 	if (lazy && !isMounted) {
 		return null;
 	}
-	
+
 	return (
 		<Portal>
 			<div className={classNames(cls.Modal, mods, [className])}>

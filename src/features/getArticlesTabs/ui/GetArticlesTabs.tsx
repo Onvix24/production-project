@@ -1,8 +1,7 @@
-import { ArticlesPageTabs, ArticlesTabItem } from "@/pages/ArticlesPage";
-import cls from "./GetArticlesTabs.module.scss";
-import { classNames } from "@/shared/lib/classNames/classNames";
 import { memo, useCallback, useMemo } from "react";
+import { ArticlesPageTabs, ArticlesTabItem } from "@/pages/ArticlesPage";
 import { ArticleType } from "@/entities/Article";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 interface GetArticlesTabsProps {
 	className?: string;
@@ -11,24 +10,23 @@ interface GetArticlesTabsProps {
 }
 
 export const GetArticlesTabs = memo(({ className, value, onChangeType } : GetArticlesTabsProps) => {
-
 	const articlesTabs = useMemo<ArticlesTabItem[]>(() => [
 		{
 			value: ArticleType.ALL,
-			content: "Всі статті"
+			content: "Всі статті",
 		},
 		{
 			value: ArticleType.IT,
-			content: "IT"
+			content: "IT",
 		},
 		{
 			value: ArticleType.ECONOMYCS,
-			content: "Економіка"
+			content: "Економіка",
 		},
 		{
 			value: ArticleType.SCIENCE,
-			content: "Наука"
-		}
+			content: "Наука",
+		},
 	], []);
 
 	const onChangeTab = useCallback((tab: ArticlesTabItem) => {
@@ -36,13 +34,12 @@ export const GetArticlesTabs = memo(({ className, value, onChangeType } : GetArt
 	}, [onChangeType]);
 
 	return (
-		<ArticlesPageTabs 
+		<ArticlesPageTabs
 			onTabClick={onChangeTab}
 			value={value}
 			tabs={articlesTabs}
-			className={classNames("", {}, [className])} 
-			
+			className={classNames("", {}, [className])}
+
 		/>
 	);
-
 });

@@ -1,13 +1,13 @@
-//@ts-nocheck
+// @ts-nocheck
 
 import path from "path";
 import { Configuration, DefinePlugin, RuleSetRule } from "webpack";
-import { BuildPaths } from "../build/types/config";
 import { buildCssLoader } from "../build/loaders/buildCssLoaders/buildCssLoaders";
+import { BuildPaths } from "../build/types/config";
 
-export default ({ config }: {config: Configuration}) => {
+export default ({ config }: { config: Configuration }) => {
 	const paths: BuildPaths = {
-		src: path.resolve(__dirname, "..", "..", "src")
+		src: path.resolve(__dirname, "..", "..", "src"),
 	};
 
 	config.resolve.modules.push(paths.src);
@@ -25,7 +25,6 @@ export default ({ config }: {config: Configuration}) => {
 		use: ["@svgr/webpack"],
 	});
 
-	
 	config.module.rules.push(buildCssLoader(true));
 
 	return config;

@@ -1,0 +1,51 @@
+.ListBox {
+    position: relative;
+
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+
+    width: 100%;
+    gap: 20px;
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: rem(10);
+    }
+    &__trigger {
+        padding: rem(5) rem(10);
+
+        border: 1px solid var(--icon-color);
+        border-radius: 2rem;
+    }
+    &__options {
+        position: absolute;
+        z-index: 10000;
+        top: 100%;
+
+        border-radius: 12px;
+    }
+    //&__button {
+    //    display: flex;
+    //    align-items: center;
+    //    gap: 10px;
+    //    svg {
+    //        transform: rotate(90deg);
+    //    }
+    //}
+    &__item {
+        padding: rem(5);
+
+        border: 1px solid $iconColor;
+        border-radius: rem(32);
+        background-color: white;
+    }
+
+    &__active {
+        background: $hintColor;
+    }
+
+    &__disabled {
+        opacity: 0.7;
+    }
+}

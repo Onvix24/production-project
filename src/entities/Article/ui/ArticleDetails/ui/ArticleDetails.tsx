@@ -1,30 +1,24 @@
-import cls from "./ArticleDetails.module.scss";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { DynamicModuleLoader, ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { articleDetailsReducer } from "@/entities/Article/model/slice/articleDetailsSlice";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { fetchArticleById } from "@/entities/Article/model/services/fetchArticlesById/fetchArticleById";
 import { memo, useCallback, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { 
-	getArticleDetailsData
-} from "../../../model/selectors/ArticleDetails/getArticleDetailsData/getArticleDetailsData";
-import  {
-	 getArticleDetailsError
-} from "../../../model/selectors/ArticleDetails/getArticleDetailsError/getArticleDetailsError";
-import { ArticleDetailsSkeleton } from "./ArticleDetailsSkeleton";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Avatar } from "@/shared/ui/Avatar/Avatar";
-import { 
-	getArticleDetailsIsLoading
-} from "../../../model/selectors/ArticleDetails/getArticleDetailsIsLoading/getArticleDetailsIsLoading";
-import { ArticleBlock } from "@/entities/Article/model/types/Article";
-import { ArticleTextBlockComponent } from "../../ArticleTextBlockComponent";
-import { ArticleImageBlockComponent } from "../../ArticleImageBlock";
-import { ArticleCodeBlockComponent } from "../../ArticleCodeBlockComponent";
 import {
-	 articleDetailsPageRecommendationsReducer 
-} from "@/pages/ArticleDetailsPage/model/slice/articleDetailsPageRecomendationsSlice";
-
+	getArticleDetailsData,
+} from "../../../model/selectors/ArticleDetails/getArticleDetailsData/getArticleDetailsData";
+import {
+	getArticleDetailsError,
+} from "../../../model/selectors/ArticleDetails/getArticleDetailsError/getArticleDetailsError";
+import {
+	getArticleDetailsIsLoading,
+} from "../../../model/selectors/ArticleDetails/getArticleDetailsIsLoading/getArticleDetailsIsLoading";
+import { fetchArticleById } from "../../../model/services/fetchArticlesById/fetchArticleById";
+import { ArticleBlock } from "../../../model/types/Article";
+import { ArticleCodeBlockComponent } from "../../ArticleCodeBlockComponent";
+import { ArticleImageBlockComponent } from "../../ArticleImageBlock";
+import { ArticleTextBlockComponent } from "../../ArticleTextBlockComponent";
+import cls from "./ArticleDetails.module.scss";
+import { ArticleDetailsSkeleton } from "./ArticleDetailsSkeleton";
 
 interface ArticleDetailsProps {
 	className?: string,
@@ -33,11 +27,10 @@ interface ArticleDetailsProps {
 
 // const redusers: ReducersList = {
 // 	articleDetails: articleDetailsReducer,
-// 	articleDetailsRecommendations: articleDetailsPageRecommendationsReducer  
+// 	articleDetailsRecommendations: articleDetailsPageRecommendationsReducer
 // };
 
 export const ArticleDetails = memo(({ className, articleId } : ArticleDetailsProps) => {
-	
 	const dispatch = useAppDispatch();
 
 	const data = useSelector(getArticleDetailsData);
@@ -49,52 +42,57 @@ export const ArticleDetails = memo(({ className, articleId } : ArticleDetailsPro
 		dispatch(fetchArticleById(articleId));
 	}, [dispatch, articleId]);
 
-
 	const renderBlock = useCallback((block: ArticleBlock) => {
 		switch (block.type) {
-		case "TEXT": 
-			return <ArticleTextBlockComponent  
-				className={cls.ArticleTextBlockComponent}
-			 	block={block}
-			 	key={block.id}
-			/>;
-		case "IMAGE": 
-			return <ArticleImageBlockComponent 
-				className={cls.ArticleImageBlockComponent} 
-				block={block} 
-				key={block.id}
-			/>;
-		case "CODE": 
-			return <ArticleCodeBlockComponent 
-				className={cls.ArticleCodeBlockComponent} 
-				block={block} 
-				key={block.id}
-			/>;
-		default :
-			return null;
+			case "TEXT":
+				return (
+					<ArticleTextBlockComponent
+						className={cls.ArticleTextBlockComponent}
+						block={block}
+						key={block.id}
+					/>
+				);
+			case "IMAGE":
+				return (
+					<ArticleImageBlockComponent
+						className={cls.ArticleImageBlockComponent}
+						block={block}
+						key={block.id}
+					/>
+				);
+			case "CODE":
+				return (
+					<ArticleCodeBlockComponent
+						className={cls.ArticleCodeBlockComponent}
+						block={block}
+						key={block.id}
+					/>
+				);
+			default:
+				return null;
 		}
 	}, []);
 
 	let content;
 
-	if(isLoading) {
+	if (isLoading) {
 		content = (
 			<ArticleDetailsSkeleton />
 		);
-	} 
+	}
 	if (error) {
 		content = (
 			<div>error</div>
 		);
 	}
 
-	if (data) (
-		content = (
-			<>
+	if (data) {
+		(
+			content = (
 				<div className={classNames(cls.ArticleDetails, {}, [className, cls.ArticleDetails__list])}>
 					<div className={classNames(cls.ArticleDetails__top, {}, [className])}>
 						<div className={cls.ArticleDetails__box}>
-							<Avatar src={data?.img} size={32}/>
+							<Avatar src={data?.img} size={32} />
 							<span>Onvix TV</span>
 							<span
 								className={cls.ArticleDetails__date}
@@ -106,23 +104,23 @@ export const ArticleDetails = memo(({ className, articleId } : ArticleDetailsPro
 							<h2 className={cls.ArticleDetails__title}>
 								{data?.title}
 							</h2>
-							<h3 
+							<h3
 								className={cls.ArticleDetails__subtitle}
 							>
 								{data?.subtitle}
 							</h3>
 						</div>
 					</div>
-					<img 
+					<img
 						width={732}
 						height={420}
 						src={data?.img}
 					/>
-				</div>	
-			</>
-		)
-	);
-	
+				</div>
+			)
+		);
+	}
+
 	return (
 		// <DynamicModuleLoader reducers={redusers} removeAfterUnmount>
 		<div className={classNames(cls.ArticleDetails, {}, [className])}>

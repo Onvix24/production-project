@@ -1,16 +1,16 @@
-import cls from "./ProfileCard.module.scss";
+import { Country, CountrySelect } from "@/entities/Country";
+import { Currency, CurrencySelect } from "@/entities/Currency";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Input } from "@/shared/ui/Input/Input";
 import { Profile } from "../../model/types/profile";
-import { Currency, CurrencySelect } from "@/entities/Currency";
-import { Country, CountrySelect } from "@/entities/Country";
+import cls from "./ProfileCard.module.scss";
 import { ProfileCardSkeleton } from "./ProfileCardSkeleton";
 
 interface ProfileCardProps {
-    className?: string;
+	className?: string;
 	data?: Profile;
-    isLoading?: boolean;
-    error?: string;
+	isLoading?: boolean;
+	error?: string;
 	readOnly?: boolean;
 	onFirstnameChange?: (value?: string) => void;
 	onLastnameChange?: (value?: string) => void;
@@ -37,14 +37,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
 		onCountryChange,
 		onCityChange,
 		onUsernameChange,
-	} = props;	
+	} = props;
 
 	if (isLoading) {
 		return (
 			<div
-				className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className] )}
+				className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className])}
 			>
-				<ProfileCardSkeleton/>
+				<ProfileCardSkeleton />
 			</div>
 		);
 	}
@@ -116,13 +116,13 @@ export const ProfileCard = (props: ProfileCardProps) => {
 						disabled={isLoading}
 						readOnly={readOnly}
 					/>
-					<CurrencySelect 
-						onChange={onCurrencyChange}	
+					<CurrencySelect
+						onChange={onCurrencyChange}
 						value={data?.currency}
 						readOnly={readOnly}
 					/>
-					<CountrySelect 
-						onChange={onCountryChange}	
+					<CountrySelect
+						onChange={onCountryChange}
 						value={data?.country}
 						readOnly={readOnly}
 					/>

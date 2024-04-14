@@ -1,74 +1,84 @@
-module.exports = {
-	env: {
-		browser: true,
-		es2021: true,
-		jest: true,
-	},
-	extends: [
-		"plugin:react/recommended",
-		"plugin:i18next/recommended",
+const overwritedAirbnbRules = {
+	"react/react-in-jsx-scope": [0],
+	"@typescript-eslint/quotes": [2, "double"],
+	"@typescript-eslint/indent": [2, "tab"],
+	"no-tabs": [0],
+	"react/jsx-indent-props": [2, "tab"],
+	"react/jsx-indent": [2, "tab"],
+	"import/extensions": [0],
+	"react/prop-types": [0],
+	"react/function-component-definition": [
+		2,
+		{
+			namedComponents: "arrow-function",
+			unnamedComponents: "arrow-function",
+		},
 	],
+	"react/require-default-props": [0],
+	"react/jsx-props-no-spreading": [0],
+	"arrow-body-style": [0],
+	"import/prefer-default-export": [0],
+	"jsx-a11y/click-events-have-key-events": [0],
+	"no-underscore-dangle": [0],
+	"no-param-reassign": [0],
+	"eslint/no-restricted-imports": [
+		0,
+		{
+			allowTypeImports: true,
+		},
+	],
+	"react-hooks/exhaustive-deps": [1],
+};
+
+const temporarilyDisabled = {
+	"@typescript-eslint/no-unused-vars": [0],
+	"max-len": [0],
+	"react/button-has-type": [0],
+	"@typescript-eslint/naming-convention": [0],
+	"import/no-cycle": [0],
+	"import/no-extraneous-dependencies": [0],
+	"@typescript-eslint/no-shadow": [0],
+	"import/no-named-as-default": [0],
+	"jsx-a11y/alt-text": [0],
+	"jsx-a11y/no-static-element-interactions": [0],
+};
+
+const overwritedFsdRules = {
+	"@conarti/feature-sliced/layers-slices": [
+		"error",
+		{
+			ignorePatterns: [
+				"**/StoreProvider/**",
+				"@/entities/Country",
+				"@/entities/Currency",
+			],
+		},
+	],
+};
+
+module.exports = {
+	// ignorePatterns: ["config/build/buildDevServer.ts"],
+	extends: [
+		"airbnb",
+		"airbnb-typescript",
+		"airbnb/hooks",
+		"plugin:@conarti/feature-sliced/recommended",
+	],
+	parserOptions: {
+		project: ["./tsconfig.json", "./tsconfig.node.json"],
+	},
+	plugins: ["prettier"],
 	overrides: [
 		{
-			files: ["**/src/**/*.{test,stories}.{ts,tsx}"],
+			files: ["config/**"],
 			rules: {
-				"i18next/no-literal-string": "off",
-				"max-len": "off",
+				"@conarti/feature-sliced/layers-slices": [0],
 			},
 		},
 	],
-	parser: "@typescript-eslint/parser",
-	parserOptions: {
-		ecmaVersion: "latest",
-		sourceType: "module",
-	},
-	plugins: [
-		"@typescript-eslint", 
-		"react", 
-		"i18next", 
-		"react-hooks"
-	],
 	rules: {
-		"object-curly-spacing": ["warn", "always"],
-		indent: ["error", "tab"],
-		"linebreak-style": ["error", "windows"],
-		quotes: ["error", "double"],
-		semi: ["error", "always"],
-		"@typescript-eslint/no-unused-vars": "warn",
-		// "no-unused-vars": "warn",
-		"react/react-in-jsx-scope": "off",
-		"import/extension": "off",
-		"@typescript-eslint/ban-ts-comment": "warn",
-		"@typescript-eslint/no-unused-vars": "warn",
-		"no-underscore-dangle": "off",
-		"i18next/no-literal-string": [
-			"off",
-			{
-				markupOnly: true,
-				ignoreAttribute: ["data-testid", "to"],
-			},
-		],
-		"max-len": ["error", { ignoreComments: true, code: 120 }],
-		"react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-		"react-hooks/exhaustive-deps": "error", // Checks effect dependencies
-		"no-param-reassign": "off",
-		"react/display-name": "off",
-		"no-undef": "off",
-		"react/self-closing-comp": [
-			"error",
-			{
-			  "component": true,
-			  "html": false
-			}
-		  ],
+		...overwritedAirbnbRules,
+		...overwritedFsdRules,
+		...temporarilyDisabled,
 	},
-	globals: {
-		__IS_DEV__: true,
-		__API__: true,
-	},
-	settings: {
-		"react": {
-		  "version": "detect" // або конкретна версія, наприклад "16.0"
-		}
-	}  
 };

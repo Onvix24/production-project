@@ -1,25 +1,24 @@
-import { useNavigate } from "react-router-dom";
-import cls from "./ArticleDetailsPageHeader.module.scss";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
 import { useCallback } from "react";
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
-import { getCanEditArticleSelector } from "@/pages/ArticleDetailsPage/model/selectors/getCanEditArticleSelector";
 import { useSelector } from "react-redux";
-import { 
-	getArticleDetailsData
-} from "@/entities/Article/model/selectors/ArticleDetails/getArticleDetailsData/getArticleDetailsData";
+import { useNavigate } from "react-router-dom";
+import {
+	getArticleDetailsData,
+} from "@/entities/Article";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { RoutePath } from "@/shared/routes/routesPath";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { getCanEditArticleSelector } from "../../../model/selectors/getCanEditArticleSelector";
+import cls from "./ArticleDetailsPageHeader.module.scss";
 
 interface ArticleDetailsPageHeaderProps {
-    className?: string
+	className?: string
 }
 
 export const ArticleDetailsPageHeader = ({ className } : ArticleDetailsPageHeaderProps) => {
-    
 	const navigate = useNavigate();
 	const canEdit = useSelector(getCanEditArticleSelector);
 	const article = useSelector(getArticleDetailsData);
-	
+
 	const onBackToList = useCallback(() => {
 		navigate(RoutePath.articles);
 	}, [navigate]);
@@ -30,21 +29,22 @@ export const ArticleDetailsPageHeader = ({ className } : ArticleDetailsPageHeade
 
 	return (
 		<div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
-			<Button 
+			<Button
 				className={cls.ArticleDetailsPageHeader__button}
 				theme={ButtonTheme.OUTLINE}
 				onClick={onBackToList}
 			>
-					Back to list
+				Back to list
 			</Button>
-			{ canEdit && <Button 
-            	className={cls.ArticleDetailsPageHeader__button}
-            	theme={ButtonTheme.OUTLINE}
-            	onClick={onEditArticle}
-			>
-                Edit article
-			</Button>
-			}
+			{ canEdit && (
+				<Button
+					className={cls.ArticleDetailsPageHeader__button}
+					theme={ButtonTheme.OUTLINE}
+					onClick={onEditArticle}
+				>
+					Edit article
+				</Button>
+			)}
 		</div>
 	);
 };

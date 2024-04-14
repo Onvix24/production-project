@@ -1,8 +1,8 @@
-import cls from "./CommentList.module.scss";
-import { classNames } from "@/shared/lib/classNames/classNames";
 import { memo } from "react";
-import { CommentCard } from "../../CommentCard";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { Comment } from "../../../model/types/Comment";
+import { CommentCard } from "../../CommentCard";
+import cls from "./CommentList.module.scss";
 import { CommentListSkeleton } from "./CommentListSkeleton";
 
 interface CommentListProps {
@@ -12,8 +12,7 @@ interface CommentListProps {
 }
 
 export const CommentList = memo(({ className, comments, isLoading } : CommentListProps) => {
-	
-	if(isLoading) {
+	if (isLoading) {
 		return (
 			<CommentListSkeleton />
 		);
@@ -23,11 +22,11 @@ export const CommentList = memo(({ className, comments, isLoading } : CommentLis
 		<div className={classNames(cls.CommentList, {}, [className])}>
 			<h2 className={cls.CommentList__title}>Коментарі</h2>
 			{
-				comments?.length 
-					?	comments.map(comment => (
+				comments?.length
+					?	comments.map((comment) => (
 						<CommentCard key={comment.id} comment={comment} />
 					))
-					: <div>No comments</div> 
+					: <div>No comments</div>
 			}
 		</div>
 	);

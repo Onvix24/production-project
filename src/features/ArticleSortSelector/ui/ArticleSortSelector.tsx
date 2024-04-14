@@ -1,8 +1,8 @@
-import { ArticlesSortField, OrderSort } from "@/pages/ArticlesPage/model/types/articlesPageSchema";
-import cls from "./ArticleSortSelector.module.scss";
+import { memo, useMemo } from "react";
+import { ArticlesSortField, OrderSort } from "@/entities/Article";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Select, SelectOptions } from "@/shared/ui/Select/Select";
-import { memo, useCallback, useMemo } from "react";
+import cls from "./ArticleSortSelector.module.scss";
 
 interface ArticleSortSelectorProps {
 	className?: string;
@@ -12,9 +12,9 @@ interface ArticleSortSelectorProps {
 	onChangeSort: (newSort: ArticlesSortField) => void;
 }
 
-export const ArticleSortSelector = memo(({ 
-	className, onChangeOrder, onChangeSort, order, sort } : ArticleSortSelectorProps) => {
-
+export const ArticleSortSelector = memo(({
+	className, onChangeOrder, onChangeSort, order, sort,
+} : ArticleSortSelectorProps) => {
 	const orderOptions = useMemo<SelectOptions<OrderSort>[]>(() => [
 		{ value: OrderSort.ASC, content: "Зростанням" },
 		{ value: OrderSort.DESC, content: "Спаданням" },
@@ -34,10 +34,10 @@ export const ArticleSortSelector = memo(({
 				options={orderOptions}
 				value={order}
 				onChange={onChangeOrder}
-			/>	
+			/>
 			<Select
 				className={cls.ArticleSortSelector__select}
-				options={sortFieldOptions} 
+				options={sortFieldOptions}
 				value={sort}
 				onChange={onChangeSort}
 			/>

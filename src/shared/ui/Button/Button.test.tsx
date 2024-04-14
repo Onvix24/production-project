@@ -1,5 +1,5 @@
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { render, screen } from "@testing-library/react/pure";
+import { Button, ButtonTheme } from "./Button";
 
 describe("Button", () => {
 	test("Test render", () => {

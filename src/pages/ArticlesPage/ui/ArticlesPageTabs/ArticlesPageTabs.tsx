@@ -1,21 +1,21 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
 import { memo, ReactNode, useCallback } from "react";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { Card, CardTheme } from "@/shared/ui/Card/Card";
 import cls from "./ArticlesPageTabs.module.scss";
 
 export interface ArticlesTabItem {
-    value: string;
-    content: ReactNode;
+	value: string;
+	content: ReactNode;
 }
 
 interface ArticlesTabsProps {
-    className?: string;
-    tabs: ArticlesTabItem[];
-    value: string;
-    onTabClick: (tab: ArticlesTabItem) => void;
+	className?: string;
+	tabs: ArticlesTabItem[];
+	value: string;
+	onTabClick: (tab: ArticlesTabItem) => void;
 }
 
-export const ArticlesPageTabs = memo((props: ArticlesTabsProps) => {    
+export const ArticlesPageTabs = memo((props: ArticlesTabsProps) => {
 	const {
 		className, tabs, onTabClick, value,
 	} = props;

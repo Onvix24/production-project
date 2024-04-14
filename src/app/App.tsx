@@ -1,11 +1,11 @@
 import { Suspense, useEffect } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { useTheme } from "@/app/providers/ThemeProvider";
-import { AppRouter } from "@/app/providers/router";
+import { useDispatch, useSelector } from "react-redux";
 import { Navbar } from "@/widgets/Navbar";
 import { Sidebar } from "@/widgets/Sidebar";
-import { useDispatch, useSelector } from "react-redux";
 import { getUserMounted, userActions } from "@/entities/User";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
+import { AppRouter } from "./providers/router";
 import "./App.scss";
 
 const App = () => {
@@ -21,9 +21,9 @@ const App = () => {
 	return (
 		<div className={classNames("app", {}, [theme])}>
 			<Suspense fallback="">
-				<Navbar/>
+				<Navbar />
 				<div className="content-page">
-					<Sidebar/>
+					<Sidebar />
 					{mounted && <AppRouter />}
 				</div>
 			</Suspense>

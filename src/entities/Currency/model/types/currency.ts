@@ -1,7 +1,7 @@
 export enum Currency {
-    "UAH" = "UAH",
-    "USD" = "USD",
-    "EUR" = "EUR",
-    "YUAN" = "YUAN",
-    "JPY" = "JPY"
+	"UAH" = "UAH",
+	"USD" = "USD",
+	"EUR" = "EUR",
+	"YUAN" = "YUAN",
+	"JPY" = "JPY",
 }

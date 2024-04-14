@@ -1,17 +1,18 @@
+import {
+	MutableRefObject, ReactNode, memo, useRef,
+} from "react";
+import { classNames } from "../../lib/classNames/classNames";
+import { useInfiniteScroll } from "../../lib/hooks/useInfinityScroll/useInfiniteScroll";
 import cls from "./Page.module.scss";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { useInfiniteScroll } from "@/shared/lib/hooks/useInfinityScroll/useInfiniteScroll";
-import { MutableRefObject, ReactNode, memo, useRef } from "react";
 
 interface PageProps {
-	className?: string; 
+	className?: string;
 	children: ReactNode;
 	onScrollEnd?: () => void;
 }
 
-//@ts-ignore
+// @ts-ignore
 export const Page = memo(({ className, children, onScrollEnd } : PageProps) => {
-	
 	const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
 	const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
 
@@ -22,13 +23,13 @@ export const Page = memo(({ className, children, onScrollEnd } : PageProps) => {
 	// });
 
 	return (
-		<section 
+		<section
 			ref={wrapperRef}
-			className={classNames(cls.Page, {}, [className])} 
+			className={classNames(cls.Page, {}, [className])}
 		>
 			{children}
-			{/* <div 
-				className={cls.Page__triggerRef} 
+			{/* <div
+				className={cls.Page__triggerRef}
 				ref={triggerRef}
 			/> */}
 		</section>

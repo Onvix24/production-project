@@ -1,8 +1,6 @@
-import React from "react";
 import { StoryFn, Meta } from "@storybook/react";
-
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "@/app/providers/ThemeProvider";
+import { ThemeDecorator } from "../../config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "../../contexts/ThemeContext";
 import { Button, ButtonSize, ButtonTheme } from "./Button";
 
 export default {
@@ -93,6 +91,6 @@ SquareSizeXlDisabled.args = {
 	children: ">",
 	theme: ButtonTheme.BACKGROUND_INVERTED,
 	square: true,
-	size: ButtonSize.XL,   
-	disabled: true
+	size: ButtonSize.XL,
+	disabled: true,
 };

@@ -21,7 +21,7 @@ export default defineConfig({
 						encoding: "utf8",
 
 						flag: "r",
-					}
+					},
 				),
 			},
 		},

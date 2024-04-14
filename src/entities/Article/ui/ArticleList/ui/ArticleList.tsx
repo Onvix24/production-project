@@ -1,9 +1,9 @@
-import cls from "./ArticleList.module.scss";
-import { classNames } from "@/shared/lib/classNames/classNames";
 import { HTMLAttributeAnchorTarget, memo } from "react";
-import { Article, ArticleListView } from "@/entities/Article/model/types/Article";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Article, ArticleListView } from "../../../model/types/Article";
 import { ArticleListItem } from "../../ArticleListItem";
 import { ArticleListItemSkeleton } from "../../ArticleListItem/ui/ArticleListItemSkeleton";
+import cls from "./ArticleList.module.scss";
 
 interface ArticleListProps {
 	className?: string,
@@ -21,8 +21,9 @@ const getSkeletons = (view: ArticleListView) => new Array(view === ArticleListVi
 	));
 
 export const ArticleList = memo((props : ArticleListProps) => {
-	
-	const { articles, view = ArticleListView.GRID , className, error, isLoading, target } = props;
+	const {
+		articles, view = ArticleListView.GRID, className, error, isLoading, target,
+	} = props;
 
 	// if (isLoading) {
 	// 	return (
@@ -33,12 +34,12 @@ export const ArticleList = memo((props : ArticleListProps) => {
 	// }
 
 	const renderArticleItem = (article: Article) => (
-		<ArticleListItem 
+		<ArticleListItem
 			article={article}
-		 	view={view}
-		 	key={article.id}
+			view={view}
+			key={article.id}
 			target={target}
-		 />
+		/>
 	);
 
 	if (!isLoading && !articles.length) {
@@ -49,12 +50,11 @@ export const ArticleList = memo((props : ArticleListProps) => {
 		);
 	}
 
-	return (		
+	return (
 		<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
 			{articles.length > 0
 				? articles.map(renderArticleItem)
-				: error
-			}
+				: error}
 			{isLoading && getSkeletons(view)}
 		</div>
 	);

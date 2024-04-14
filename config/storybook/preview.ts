@@ -1,8 +1,8 @@
+import type { Preview } from "@storybook/react";
 import { Theme } from "@/app/providers/ThemeProvider";
 import { RouterDecorator } from "@/shared/config/storybook/RouterDecorator/RouterDecorator";
 import { StyleDecorator } from "@/shared/config/storybook/StyleDecorator/StyleDecorator";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import type { Preview } from "@storybook/react";
 
 export const preview: Preview = {
 	parameters: {
@@ -19,5 +19,5 @@ export const preview: Preview = {
 export const decorators = [
 	ThemeDecorator(Theme.LIGHT),
 	StyleDecorator,
-	RouterDecorator
+	RouterDecorator,
 ];

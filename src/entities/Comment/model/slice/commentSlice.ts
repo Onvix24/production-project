@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Comment } from "../types/Comment";
 
-
 const initialState: Comment = {
 	id: "",
 	text: "",
-	user: { id: "", username: "" },	
+	user: { id: "", username: "" },
 };
 
 export const commentSlice = createSlice({

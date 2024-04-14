@@ -1,16 +1,16 @@
-import cls from "./ChangeArticleListView.module.scss";
-import { classNames } from "@/shared/lib/classNames/classNames";
 import { memo } from "react";
+import { ArticleListView } from "@/entities/Article";
 import ColumnView from "@/shared/assets/icons/columnView.svg";
 import GridView from "@/shared/assets/icons/gridView.svg";
-import { ArticleListView } from "@/entities/Article";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { Icon } from "@/shared/ui/Icon/Icon";
+import cls from "./ChangeArticleListView.module.scss";
 
 interface ChangeArticleListViewProps {
 	className?: string,
 	view: ArticleListView,
-	onViewClick?: (view: ArticleListView) => void; 
+	onViewClick?: (view: ArticleListView) => void;
 }
 
 interface ButtonViewTypes {
@@ -21,16 +21,15 @@ interface ButtonViewTypes {
 const buttonViewTypes: ButtonViewTypes[] = [
 	{
 		view: ArticleListView.GRID,
-		icon: GridView
+		icon: GridView,
 	},
 	{
 		view: ArticleListView.COLUMN,
-		icon: ColumnView
-	}
+		icon: ColumnView,
+	},
 ];
 
 export const ChangeArticleListView = memo(({ className, view, onViewClick } : ChangeArticleListViewProps) => {
-	
 	const onClickHandler = (newView: ArticleListView) => () => {
 		onViewClick?.(newView);
 	};
@@ -39,21 +38,20 @@ export const ChangeArticleListView = memo(({ className, view, onViewClick } : Ch
 		<div className={classNames(cls.ChangeArticleListView, {}, [className])}>
 			{
 				buttonViewTypes.map(
-					buttonViewType => (
-						<Button 
+					(buttonViewType) => (
+						<Button
 							key={buttonViewType.view}
 							theme={ButtonTheme.CLEAR}
 							onClick={onClickHandler(buttonViewType.view)}
 						>
-							<Icon 
+							<Icon
 								Svg={buttonViewType.icon}
 								className={
-									classNames(cls.ChangeArticleListView__icon, {
-										[cls.ChangeArticleListView__icon_selected]: buttonViewType.view === view })
+									classNames(cls.ChangeArticleListView__icon, { [cls.ChangeArticleListView__icon_selected]: buttonViewType.view === view })
 								}
 							/>
 						</Button>
-					)
+					),
 				)
 			}
 		</div>

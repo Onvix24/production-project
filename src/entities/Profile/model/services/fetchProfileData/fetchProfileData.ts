@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { ThunkConfig } from "@/app/providers/StoreProvider";
-import { Profile } from "../../types/profile";
 import { USER_LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
+import { Profile } from "../../types/profile";
 
 export const fetchProfileData = createAsyncThunk<Profile, string, ThunkConfig<string>>(
 	"profile/fetchProfileData",
@@ -13,18 +13,18 @@ export const fetchProfileData = createAsyncThunk<Profile, string, ThunkConfig<st
 
 			const response = await extra.api.get<Profile>(`/profile/${id}`, {
 				headers: {
-					"Authorization": `${encodedToken}`			
-				}
+					Authorization: `${encodedToken}`,
+				},
 			});
 
 			if (!response.data) {
 				throw new Error();
 			}
-			
-			return response.data;            
+
+			return response.data;
 		} catch (error) {
 			console.log(error);
 			return rejectWithValue("error");
 		}
-	}
+	},
 );

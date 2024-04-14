@@ -1,9 +1,9 @@
-import cls from "./ArticleCodeBlockComponent.module.scss";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { ArticleCodeBlock } from "@/entities/Article/model/types/Article";
-import { Button } from "@/shared/ui/Button/Button";
-import CopyIcon from "@/shared/assets/icons/Article/copy.svg";
 import { useCallback } from "react";
+import CopyIcon from "@/shared/assets/icons/Article/copy.svg";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Button } from "@/shared/ui/Button/Button";
+import { ArticleCodeBlock } from "../../../model/types/Article";
+import cls from "./ArticleCodeBlockComponent.module.scss";
 
 interface ArticleCodeBlockProps {
 	className?: string;
@@ -11,15 +11,14 @@ interface ArticleCodeBlockProps {
 }
 
 export const ArticleCodeBlockComponent = ({ className, block } : ArticleCodeBlockProps) => {
-	
 	const onCopy = useCallback(() => {
 		navigator.clipboard.writeText(block.code);
-	}, [block.code]); 
+	}, [block.code]);
 
 	return (
 		<div className={classNames(cls.ArticleCodeBlockComponent, {}, [className])}>
 			<Button onClick={onCopy} className={cls.ArticleCodeBlockComponent__copyBtn}>
-				<CopyIcon className={cls.ArticleCodeBlockComponent__copyIcon}/>
+				<CopyIcon className={cls.ArticleCodeBlockComponent__copyIcon} />
 			</Button>
 			<pre className={cls.ArticleCodeBlockComponent__pre}>
 				<code className={cls.ArticleCodeBlockComponent__code}>

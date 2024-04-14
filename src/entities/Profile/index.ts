@@ -1,13 +1,12 @@
 export type {
 	Profile,
 	ProfileSchema,
-	ValidateProfileError
+	ValidateProfileError,
 } from "./model/types/profile";
-
 
 export {
 	profileActions,
-	profileReducer
+	profileReducer,
 } from "./model/slice/profileSlice";
 
 export {
@@ -19,7 +18,7 @@ export {
 } from "./model/services/updateProfileData/updateProfileData";
 
 export {
-	ProfileCard
+	ProfileCard,
 } from "./ui/ProfileCard/ProfileCard";
 
 export { getProfileData } from "./model/selectors/getProfileData/getProfileData";

@@ -1,32 +1,32 @@
+import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
-import cls from "./LoginForm.module.scss";
-import { Input } from "@/shared/ui/Input/Input";
 import { useSelector } from "react-redux";
-import { useCallback } from "react";	
-import { loginActions, loginReducer } from "../../model/slice/loginSlice";
-import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
-import {
-	getLoginFormUsername
-} from "@/features/AuthByUsername/model/selectors/getLoginFormUsername/getLoginFormUsername";
-import {
-	getLoginFormPassword
-} from "@/features/AuthByUsername/model/selectors/getLoginFormPassword/getLoginFormPassword";
-import {
-	getLoginFormIsLoading
-} from "@/features/AuthByUsername/model/selectors/getLoginFormIsLoading/getLoginFormIsLoading";
-import {
-	getLoginFormError
-} from "@/features/AuthByUsername/model/selectors/getLoginFormError/getLoginFormError";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import {
 	DynamicModuleLoader,
-	ReducersList
+	ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Input } from "@/shared/ui/Input/Input";
+import {
+	getLoginFormError,
+} from "../../model/selectors/getLoginFormError/getLoginFormError";
+import {
+	getLoginFormIsLoading,
+} from "../../model/selectors/getLoginFormIsLoading/getLoginFormIsLoading";
+import {
+	getLoginFormPassword,
+} from "../../model/selectors/getLoginFormPassword/getLoginFormPassword";
+import {
+	getLoginFormUsername,
+} from "../../model/selectors/getLoginFormUsername/getLoginFormUsername";
+import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
+import { loginActions, loginReducer } from "../../model/slice/loginSlice";
+import cls from "./LoginForm.module.scss";
 
 export interface LoginFormProps {
-    className?: string;
+	className?: string;
 	onSuccess: () => void;
 }
 
@@ -58,11 +58,9 @@ const LoginForm = ({ className, onSuccess }: LoginFormProps) => {
 		}
 	}, [dispatch, password, username, onSuccess]);
 
-
-
 	return (
 		<DynamicModuleLoader
-			reducers = {initialReducers}
+			reducers={initialReducers}
 			removeAfterUnmount
 		>
 			<div className={classNames(cls.LoginForm, {}, [className])}>
@@ -95,7 +93,7 @@ const LoginForm = ({ className, onSuccess }: LoginFormProps) => {
 			</div>
 		</DynamicModuleLoader>
 
-	);;
+	);
 };
 
 export default LoginForm;
