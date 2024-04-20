@@ -5,7 +5,6 @@
     gap: rem(103);
 
     margin-bottom: rem(40);
-
     &__avatar {
     }
 
@@ -18,10 +17,17 @@
 
 
         &_hidden {
+            display: none;
+
             transition: opacity 0.3s ease;
             pointer-events: none;
 
             opacity: 0;
         }
+    }
+
+    @media (max-width: em($mobile)) {
+        flex-direction: column;
+        gap: rem(20);        
     }
 }

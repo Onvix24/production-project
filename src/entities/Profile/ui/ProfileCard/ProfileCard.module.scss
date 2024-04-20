@@ -5,6 +5,10 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: rem(24);
+
+        @media (max-width: em($tablet)) {
+            grid-template-columns: 1fr;
+        }
     }
     &__column {
         display: grid;

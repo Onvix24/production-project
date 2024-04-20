@@ -11,7 +11,9 @@ export default {
 	},
 } as Meta<typeof ThemeSwitcher>;
 
-const Template: StoryFn<typeof ThemeSwitcher> = (args) => <ThemeSwitcher {...args} />;
+const Template: StoryFn<typeof ThemeSwitcher> = (args) => (
+	<ThemeSwitcher {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};

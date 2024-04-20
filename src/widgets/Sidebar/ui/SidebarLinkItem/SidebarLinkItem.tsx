@@ -10,9 +10,10 @@ import cls from "./SidebarLinkItem.module.scss";
 interface SidebarLinkItemProps {
 	item: SidebarItemsLinkType;
 	collapsed: boolean;
+	className?: string;
 }
 
-export const SidebarLinkItem = memo(({ item, collapsed }: SidebarLinkItemProps) => {
+export const SidebarLinkItem = memo(({ item, collapsed, className }: SidebarLinkItemProps) => {
 	const { t } = useTranslation();
 
 	const isAuth = useSelector(getUserAuthData);
@@ -23,13 +24,13 @@ export const SidebarLinkItem = memo(({ item, collapsed }: SidebarLinkItemProps) 
 
 	return (
 		<AppLink
-			className={classNames(cls.item, {
-				[cls.collapsed]: collapsed,
-			})}
+			className={classNames(cls.Item, {
+				[cls.Item__collapsed]: collapsed,
+			}, [className])}
 			to={item.path}
 		>
-			<item.Icon className={cls.icon} />
-			<span className={cls.link}>{t(item.text)}</span>
+			<item.Icon className={cls.Item__icon} />
+			<span className={cls.Item__link}>{t(item.text)}</span>
 		</AppLink>
 	);
 });

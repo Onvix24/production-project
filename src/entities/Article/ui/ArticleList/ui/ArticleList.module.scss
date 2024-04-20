@@ -4,6 +4,19 @@
     max-width: rem(780);
 
     border-radius: rem(32);
+
+    &__button {
+        display: block;
+
+        margin: auto;
+        padding: rem(6);
+
+        cursor: pointer;
+    }
+
+    &__list {
+        margin-bottom: rem(10);
+    }
 }
 
 .GRID {

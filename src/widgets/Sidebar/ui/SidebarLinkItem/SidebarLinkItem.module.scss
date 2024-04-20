@@ -1,29 +1,41 @@
-.item {
+.Item {
+    $p: &;
     display: flex;
-    gap: 21px;
+    gap: rem(20);
 
     align-items: center;
-}
 
-.icon {
-    margin-right: 21px;
-    fill: $iconColor;
-}
+    &__icon {
+        //margin-right: 21px;
+        fill: $iconColor;
+    }
 
-.link {
-    transition: opacity 0.3s;
+    &__link {
+        transition: opacity 0.3s;
 
-    opacity: 1;
+        opacity: 1;
 
-    font: $fontFamily;
-}
+        font-family: $fontFamily;
+    }
 
-.collapsed {
-    .link {
-        width: 0;
+    @media (min-width: em($laptop)) {
+        &__collapsed {
+            gap: 0;
 
-        transition: 0.3s opacity;
+            justify-content: center;
 
-        opacity: 0;
+            #{$p} {
+                width: 0;
+
+                &__link {
+                    width: 0;
+
+                    transition: 0.3s opacity;
+                    pointer-events: none;
+
+                    opacity: 0;
+                }
+            }
+        }
     }
 }

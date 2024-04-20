@@ -24,16 +24,18 @@ body {
 }
 body {
 	color: $fontColor;
+	background: $layoutColor;
 
 	font-family: $fontFamily;
 	font-size: $fontSize;
-	line-height: 1;
+	//line-height: 1;
+	line-height: normal;
 	//text-rendering: optimizeLegibility;
-	-ms-text-size-adjust: 100%;
-	-moz-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	// text-rendering: optimizeLegibility;
+	text-size-adjust: 100%;
 }
 input,
 button,

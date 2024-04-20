@@ -36,7 +36,6 @@ export interface ReducerManager {
 
 export interface ThunkExtraArguments {
 	api: AxiosInstance,
-
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {

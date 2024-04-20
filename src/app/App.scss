@@ -1,18 +1,21 @@
+#root {
+    height: 100%;
+}
+
 .app {
-    min-height: 100vh;
-
-    padding: rem(32);
-
-    background: $secondaryBgColor;
+    padding: 0 $containerPadding + px;
 }
 
 .content-page {
     display: flex;
 
-    gap: rem(32);
-
     padding-top: rem(12);
 
+    gap: rem(32);
+
+    @media (max-width: em($laptop)) {
+        flex-direction: column;
+    }
 }
 
 .page-wrapper {

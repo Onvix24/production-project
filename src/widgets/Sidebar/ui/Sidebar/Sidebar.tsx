@@ -20,6 +20,7 @@ export const Sidebar = memo(({ className } : SidebarProps) => {
 	const sidebarLinks = useSelector(getSidebarLinks);
 	const linksList = useMemo(() => sidebarLinks.map((item) => (
 		<SidebarLinkItem
+			className={cls.Sidebar__item}
 			item={item}
 			key={item.path}
 			collapsed={collapsed}
@@ -29,27 +30,26 @@ export const Sidebar = memo(({ className } : SidebarProps) => {
 	return (
 		<div
 			data-testid="sidebar"
-			className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
+			className={classNames(cls.Sidebar, { [cls.Sidebar__collapsed]: collapsed }, [className])}
 		>
 			<Button
 				data-testid="sidebar-toggle"
 				onClick={onToggle}
-				className={cls.collapsedBtn}
+				className={cls.Sidebar__collapsedBtn}
 				square
-				size={ButtonSize.L}
 			>
 				{collapsed ? ">" : "<"}
 			</Button>
-			<div className={cls.items}>
+			<div className={cls.Sidebar__items}>
 				{
 					linksList
 				}
 			</div>
-			<div className={cls.switchers}>
+			<div className={cls.Sidebar__switchers}>
 				<ThemeSwitcher />
 				<LangSwitcher
-					className={cls.lang}
-					short={collapsed}
+					className={cls.Sidebar__lang}
+					// short={collapsed}
 				/>
 			</div>
 		</div>

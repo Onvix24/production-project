@@ -1,7 +1,7 @@
 import { memo, useCallback, useState } from "react";
 import { useSelector } from "react-redux";
+import { useUpdateArticleCommentsMutation } from "@/entities/Comment";
 import { getUserAuthData } from "@/entities/User";
-import { useUpdateArticleCommentsMutation } from "@/shared/api/rtkQueryApi";
 import SendIcon from "@/shared/assets/icons/Article/send.svg";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button } from "@/shared/ui/Button/Button";

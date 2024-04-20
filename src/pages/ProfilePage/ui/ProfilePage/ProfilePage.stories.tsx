@@ -11,7 +11,9 @@ export default {
 	},
 } as Meta<typeof ProfilePage>;
 
-const Template: StoryFn<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
+const Template: StoryFn<typeof ProfilePage> = (args) => (
+	<ProfilePage {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};

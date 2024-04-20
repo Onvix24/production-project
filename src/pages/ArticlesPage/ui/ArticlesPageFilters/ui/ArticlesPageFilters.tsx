@@ -1,8 +1,8 @@
-import { useCallback, useMemo } from "react";
+import { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { ArticleSortSelector } from "@/features/ArticleSortSelector";
 import { GetArticlesTabs } from "@/features/getArticlesTabs";
-import { ArticleType } from "@/entities/Article";
+import { ArticleType, ArticlesSortField, OrderSort } from "@/entities/Article";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useDebounce } from "@/shared/lib/hooks/useDebounce/useDebounce";
@@ -16,8 +16,6 @@ import {
 } from "../../../model/selectors/ArticlePageSelectors";
 import { fetchArticlesList } from "../../../model/services/fetchArticlesList/fetchArticlesList";
 import { articlesPageActions } from "../../../model/slices/articlesPageSlice";
-import { ArticlesSortField, OrderSort } from "../../../model/types/articlesPageSchema";
-import { ArticlesPageTabs, ArticlesTabItem } from "../../ArticlesPageTabs/ArticlesPageTabs";
 import cls from "./ArticlesPageFilters.module.scss";
 
 interface ArticlesPageFiltersProps {

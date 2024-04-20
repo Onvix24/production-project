@@ -21,6 +21,10 @@
     }
 
     &__content {
+        display: flex;
+        flex-direction: column;
+        gap: rem(20);
+
         padding: rem(10);
 
         border-radius: rem(12);

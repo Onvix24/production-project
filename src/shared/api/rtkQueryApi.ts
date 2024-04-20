@@ -1,13 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-// eslint-disable-next-line @conarti/feature-sliced/layers-slices
-import { Comment } from "@/entities/Comment";
 import { USER_LOCALSTORAGE_KEY } from "../const/localStorage";
-
-interface updateArticleComments {
-	articleId: number | string;
-	commentText: string;
-	userId: string;
-}
 
 export const rtkQueryApi = createApi({
 	reducerPath: "rtkQueryApi",
@@ -22,28 +14,5 @@ export const rtkQueryApi = createApi({
 		},
 	}),
 	endpoints: (builder) => ({
-		getComments: builder.query<Comment[], number>({
-			providesTags: ["Comment"],
-			query: (articleId) => `comments/?articleId=${articleId}&_expand=user`,
-			transformResponse: (response: Comment[]) => {
-				console.log("Response:", response);
-				return response;
-			},
-		}),
-		updateArticleComments: builder.mutation<unknown, updateArticleComments>({
-			invalidatesTags: ["Comment"],
-			query: ({ articleId, commentText, userId }) => ({
-				method: "POST",
-				url: "comments",
-
-				body: {
-					articleId,
-					userId,
-					text: commentText,
-				},
-			}),
-		}),
 	}),
 });
-
-export const { useGetCommentsQuery, useUpdateArticleCommentsMutation } = rtkQueryApi;

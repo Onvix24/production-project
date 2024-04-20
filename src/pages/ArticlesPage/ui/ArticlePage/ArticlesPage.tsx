@@ -2,21 +2,18 @@ import { memo, useCallback, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { ChangeArticleListView } from "@/features/ChangeArticleListView";
-import { ArticleList, ArticleListView } from "@/entities/Article";
+import { ArticleListView } from "@/entities/Article";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { DynamicModuleLoader, ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { Page } from "@/shared/ui/Page/Page";
 import {
-	getArticlesPageError,
-	getArticlesPageHasMore,
-	getArticlesPageIsLoading,
 	getArticlesPageView,
 } from "../../model/selectors/ArticlePageSelectors";
 import { fetchLoadArticles } from "../../model/services/fetchLoadArticles/fetchLoadArticles";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
-import { articlesPageActions, articlesPageReducer, getArticles } from "../../model/slices/articlesPageSlice";
+import { articlesPageActions, articlesPageReducer } from "../../model/slices/articlesPageSlice";
+import { ArticleInfiniteList } from "../ArticleInfiniteList";
 import { ArticlesPageFilters } from "../ArticlesPageFilters";
 import cls from "./ArticlesPage.module.scss";
 
@@ -30,11 +27,7 @@ const reducers: ReducersList = {
 
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
 	const dispatch = useAppDispatch();
-	const articles = useSelector(getArticles.selectAll);
-	const isLoading = useSelector(getArticlesPageIsLoading);
-	const error = useSelector(getArticlesPageError);
 	const view = useSelector(getArticlesPageView);
-	const hasMore = useSelector(getArticlesPageHasMore);
 
 	const [searchParams] = useSearchParams();
 
@@ -61,22 +54,9 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 			>
 				<div className={cls.ArticlesPage__contentWrapper}>
 					<ChangeArticleListView view={view} onViewClick={onChangeView} />
-					<ArticleList
-						isLoading={isLoading}
-						view={view}
-						articles={articles}
-						error={error}
-					/>
+					<ArticleInfiniteList view={view} onLoadArticle={onLoadArticle} />
 					<ArticlesPageFilters className={cls.ArticlesPage__filters} />
 				</div>
-				<Button
-					className={cls.ArticlesPage__button}
-					theme={ButtonTheme.OUTLINE}
-					onClick={onLoadArticle}
-					disabled={!hasMore}
-				>
-					Load more
-				</Button>
 			</Page>
 		</DynamicModuleLoader>
 	);
